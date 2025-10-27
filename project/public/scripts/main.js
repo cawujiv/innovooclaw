@@ -112,8 +112,35 @@ let isOptimized = false;
 // Popup-Element
 const popup = document.getElementById('prozess-popup');
 
+// Datum dynamisch setzen (immer nächster Tag)
+function setDynamicBatchDate() {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    const dayAfter = new Date(tomorrow);
+    dayAfter.setDate(dayAfter.getDate() + 1);
+    
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const tomorrowStr = tomorrow.toLocaleDateString('de-DE', options);
+    const dayAfterStr = dayAfter.toLocaleDateString('de-DE', options);
+    
+    // Formatierung: "24.-25. Oktober 2025" Stil
+    const tomorrowDay = tomorrow.getDate();
+    const dayAfterDay = dayAfter.getDate();
+    const monthYear = tomorrow.toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
+    
+    const batchInfo = `Batch 1 - Schicht 1 & 2 (${tomorrowDay}.-${dayAfterDay}. ${monthYear})`;
+    
+    const batchElement = document.getElementById('batch-info');
+    if (batchElement) {
+        batchElement.textContent = batchInfo;
+    }
+}
+
 // Initialisierung
 document.addEventListener('DOMContentLoaded', () => {
+    setDynamicBatchDate(); // Datum setzen
     renderStrompreisEditor();
     // Erstelle Original-Zeitraster beim ersten Laden
     originalZeitraster = erstelleZeitraster(false);
