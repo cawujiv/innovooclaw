@@ -1,0 +1,165 @@
+{
+  "app": {
+    "title": "⚡ Energy-Flexible Production Planning",
+    "subtitle": "Demand Response System - Day-Ahead Optimization",
+    "batch_info": "Batch 1 - Shift 1 & 2 (October 24-25, 2025)"
+  },
+  "strompreise": {
+    "title": "💰 Day-Ahead Electricity Prices (EPEX Spot)",
+    "description": "Simulated electricity prices for the next 24 hours. Values can be adjusted:",
+    "unit": "€/kWh",
+    "categories": {
+      "guenstig": "Cheap",
+      "mittel": "Medium",
+      "teuer": "Expensive"
+    }
+  },
+  "buttons": {
+    "optimize": "⚡ Optimize Energy Costs",
+    "reset": "🔄 New Simulation with Different Values"
+  },
+  "summary": {
+    "energie": {
+      "label": "kWh Total Energy"
+    },
+    "kosten_original": {
+      "label": "€ Costs (Original)"
+    },
+    "kosten_optimiert": {
+      "label": "€ Costs (Optimized)"
+    },
+    "ersparnis": {
+      "label": "€ Energy Cost Savings"
+    },
+    "verguetung": {
+      "label": "€ Flexibility Compensation"
+    }
+  },
+  "stats": {
+    "title": "📊 Optimized Planning",
+    "gesamtenergie": "Total Energy",
+    "durchschnittspreis": "Avg. Electricity Price",
+    "energiekosten": "Energy Costs",
+    "hochpreis_auftraege": "Orders in High-Price Period",
+    "vermiedene_spitzenlast": "Avoided Peak Load"
+  },
+  "verguetung": {
+    "title": "💵 Compensation & Savings",
+    "energiekostenersparnis": "Energy Cost Savings:",
+    "lastverschiebung": "Load Shifting Compensation (50%):",
+    "flexibilitaet": "Flexibility Compensation (80%):",
+    "gesamt": "Total Savings:"
+  },
+  "chart": {
+    "title": "📈 Load Profile & Electricity Price Trend - Before/After Comparison",
+    "info": {
+      "title": "📊 Before/After Comparison:",
+      "line_original": "Gray dashed line:",
+      "line_original_desc": "Original load profile (before optimization)",
+      "line_optimiert": "Blue solid line:",
+      "line_optimiert_desc": "Optimized load profile (after optimization)",
+      "background": "Red background:",
+      "background_desc": "Electricity price trend (higher = more expensive)",
+      "success_title": "✅ Recognizing Successful Optimization:",
+      "success_desc": "High blue peaks (power) with low red background (electricity price) = high load in cheap period ✓",
+      "shift_desc": "Visible shift between gray and blue line shows the load shifting that occurred!"
+    },
+    "labels": {
+      "strompreis": "Electricity Price (€/kWh)",
+      "leistung": "Power (kW)",
+      "leistung_original": "Power Original (kW)",
+      "leistung_optimiert": "Power Optimized (kW)",
+      "uhrzeit": "Time"
+    },
+    "tooltip": {
+      "auftrag": "Order:",
+      "maschine": "Machine:",
+      "prozess": "Process:"
+    }
+  },
+  "timeline": {
+    "title": "⚙️ Process Timeline Matrix (Time × Machine)",
+    "tip": "💡 Tip: Hover over a process for detailed information. The Y-axis shows the different machines, the X-axis shows time.",
+    "legend": {
+      "laser": "🔴 Laser (Cutting)",
+      "tapone": "🟣 TapOne (Threading)",
+      "deburrer": "🟢 Deburrer (Deburring)",
+      "manuell": "⚫ Manual (QC/Inspection)"
+    }
+  },
+  "popup": {
+    "auftrag": "Order:",
+    "kunde": "Customer:",
+    "maschine": "Machine:",
+    "startzeit": "Start Time:",
+    "endzeit": "End Time:",
+    "dauer": "Duration:",
+    "leistung": "Power:",
+    "energie": "Energy:",
+    "strompreis": "Electricity Price:",
+    "energiekosten": "💰 Energy Costs:",
+    "zeitfenster": "Time Window:",
+    "kategorie": "Category:",
+    "kategorie_guenstig": "✅ Cheap",
+    "kategorie_mittel": "⚠️ Medium",
+    "kategorie_teuer": "❌ Expensive"
+  },
+  "auftraege": {
+    "title": "📋 Optimized Production Plan",
+    "description": "Orders have been arranged in an energy cost-optimized manner.",
+    "schicht2_badge": "Orange marked = Shift 2",
+    "schicht1": "✓ Shift 1",
+    "schicht2": "Shift 2",
+    "prozesse_title": "📋 Process Steps:",
+    "units": {
+      "min": "min",
+      "kw": "kW",
+      "kwh": "kWh",
+      "eur": "€"
+    }
+  },
+  "strategie": {
+    "title": "🎯 Applied Optimization Strategy: Cost Minimization",
+    "ziel": "Goal: Maximum energy cost savings through optimal shifting of ALL orders into cheap time windows",
+    "alle_auftraege": "ALL orders are sorted by cheapest electricity price and shifted to the cheapest available time windows",
+    "priorisierung": "Prioritization: Orders with higher energy first to achieve maximum cost savings",
+    "visualisierung": "Visualization: In the chart you see high blue peaks (all loads) with low red electricity price = successful optimization!",
+    "demand_response": "Demand Response Compensation: 50% of control amount for avoided load in high-price periods",
+    "flexibilitaet": "Flexibility Premium: 80% of power price for provided load shifting (kW)",
+    "mindestkriterium": "Minimum Criterion: Optimization is only executed with >5% cost savings",
+    "constraints": "Technical Constraints: 15 min setup time for material change, 20 min warm-up time considered"
+  },
+  "alerts": {
+    "optimization_success": "✅ Optimization successful! Energy costs reduced by {percent}% ({amount} € saved)",
+    "optimization_success_detail": "All {count} orders were shifted to the cheapest available time windows",
+    "optimization_insufficient": "⚠️ Optimization yielded only {percent}% savings ({amount} €). At least 5% required. Please adjust electricity prices or maintain production."
+  },
+  "errors": {
+    "no_data": "No data available",
+    "api_error": "Error loading data",
+    "optimization_failed": "Optimization failed"
+  },
+  "maschinen": {
+    "laser": "Laser",
+    "tapone": "TapOne",
+    "deburrer": "Deburrer",
+    "manuell": "Manual"
+  },
+  "prozesse": {
+    "aufwaermen": "Warm-up",
+    "ruestzeit": "Setup Time",
+    "ruestzeit_material": "Material Setup Time",
+    "ruestzeit_dicke": "Thickness Setup Time",
+    "schneiden": "Cutting",
+    "entgraten": "Deburring",
+    "gewinde": "Threading",
+    "kontrolle": "Inspection",
+    "qk": "QC"
+  },
+  "meta": {
+    "language": "en",
+    "language_name": "English",
+    "version": "1.0.0",
+    "last_updated": "2025-01-27"
+  }
+}

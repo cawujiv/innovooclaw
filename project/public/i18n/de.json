@@ -1,0 +1,165 @@
+{
+  "app": {
+    "title": "⚡ Energieflexible Produktionsplanung",
+    "subtitle": "Demand Response System - Day-Ahead Optimierung",
+    "batch_info": "Batch 1 - Schicht 1 & 2 (24.-25. Oktober 2025)"
+  },
+  "strompreise": {
+    "title": "💰 Day-Ahead Strompreise (EPEX Spot)",
+    "description": "Simulierte Strompreise für die nächsten 24 Stunden. Werte können angepasst werden:",
+    "unit": "€/kWh",
+    "categories": {
+      "guenstig": "Günstig",
+      "mittel": "Mittel",
+      "teuer": "Teuer"
+    }
+  },
+  "buttons": {
+    "optimize": "⚡ Energiekostenoptimiert Planen",
+    "reset": "🔄 Neue Simulation mit anderen Werten"
+  },
+  "summary": {
+    "energie": {
+      "label": "kWh Gesamtenergie"
+    },
+    "kosten_original": {
+      "label": "€ Kosten (Original)"
+    },
+    "kosten_optimiert": {
+      "label": "€ Kosten (Optimiert)"
+    },
+    "ersparnis": {
+      "label": "€ Energiekostenersparnis"
+    },
+    "verguetung": {
+      "label": "€ Flexibilitätsvergütung"
+    }
+  },
+  "stats": {
+    "title": "📊 Optimierte Planung",
+    "gesamtenergie": "Gesamtenergie",
+    "durchschnittspreis": "Durchschn. Strompreis",
+    "energiekosten": "Energiekosten",
+    "hochpreis_auftraege": "Aufträge in Hochpreis-Zeit",
+    "vermiedene_spitzenlast": "Vermiedene Spitzenlast"
+  },
+  "verguetung": {
+    "title": "💵 Vergütung & Einsparungen",
+    "energiekostenersparnis": "Energiekostenersparnis:",
+    "lastverschiebung": "Vergütung Lastverschiebung (50%):",
+    "flexibilitaet": "Vergütung Flexibilität (80%):",
+    "gesamt": "Gesamt-Einsparungen:"
+  },
+  "chart": {
+    "title": "📈 Lastprofil & Strompreisverlauf - Vorher/Nachher-Vergleich",
+    "info": {
+      "title": "📊 Vorher/Nachher-Vergleich:",
+      "line_original": "Graue gestrichelte Linie:",
+      "line_original_desc": "Original-Lastprofil (vor Optimierung)",
+      "line_optimiert": "Blaue durchgezogene Linie:",
+      "line_optimiert_desc": "Optimiertes Lastprofil (nach Optimierung)",
+      "background": "Roter Hintergrund:",
+      "background_desc": "Strompreisverlauf (je höher, desto teurer)",
+      "success_title": "✅ Erfolgreiche Optimierung erkennen:",
+      "success_desc": "Hohe blaue Spitzen (Leistung) bei niedrigem roten Hintergrund (Strompreis) = Hochlast in günstiger Zeit ✓",
+      "shift_desc": "Sichtbare Verschiebung zwischen grauer und blauer Linie zeigt die erfolgte Lastverschiebung!"
+    },
+    "labels": {
+      "strompreis": "Strompreis (€/kWh)",
+      "leistung": "Leistung (kW)",
+      "leistung_original": "Leistung Original (kW)",
+      "leistung_optimiert": "Leistung Optimiert (kW)",
+      "uhrzeit": "Uhrzeit"
+    },
+    "tooltip": {
+      "auftrag": "Auftrag:",
+      "maschine": "Maschine:",
+      "prozess": "Prozess:"
+    }
+  },
+  "timeline": {
+    "title": "⚙️ Prozess-Timeline Matrix (Zeit × Maschine)",
+    "tip": "💡 Tipp: Bewegen Sie die Maus über einen Prozess für detaillierte Informationen. Die Y-Achse zeigt die verschiedenen Maschinen, die X-Achse die Zeit.",
+    "legend": {
+      "laser": "🔴 Laser (Schneiden)",
+      "tapone": "🟣 TapOne (Gewinde)",
+      "deburrer": "🟢 Deburrer (Entgraten)",
+      "manuell": "⚫ Manuell (QK/Kontrolle)"
+    }
+  },
+  "popup": {
+    "auftrag": "Auftrag:",
+    "kunde": "Kunde:",
+    "maschine": "Maschine:",
+    "startzeit": "Startzeit:",
+    "endzeit": "Endzeit:",
+    "dauer": "Dauer:",
+    "leistung": "Leistung:",
+    "energie": "Energie:",
+    "strompreis": "Strompreis:",
+    "energiekosten": "💰 Energiekosten:",
+    "zeitfenster": "Zeitfenster:",
+    "kategorie": "Kategorie:",
+    "kategorie_guenstig": "✅ Günstig",
+    "kategorie_mittel": "⚠️ Mittel",
+    "kategorie_teuer": "❌ Teuer"
+  },
+  "auftraege": {
+    "title": "📋 Optimierter Produktionsplan",
+    "description": "Aufträge wurden energiekostenoptimiert angeordnet.",
+    "schicht2_badge": "Orange markiert = Schicht 2",
+    "schicht1": "✓ Schicht 1",
+    "schicht2": "Schicht 2",
+    "prozesse_title": "📋 Prozessschritte:",
+    "units": {
+      "min": "min",
+      "kw": "kW",
+      "kwh": "kWh",
+      "eur": "€"
+    }
+  },
+  "strategie": {
+    "title": "🎯 Angewandte Optimierungsstrategie: Kostenminimierung",
+    "ziel": "Ziel: Maximale Energiekostenersparnis durch optimale Verschiebung ALLER Aufträge in günstige Zeitfenster",
+    "alle_auftraege": "ALLE Aufträge werden nach günstigstem Strompreis sortiert und in die günstigsten verfügbaren Zeitfenster verschoben",
+    "priorisierung": "Priorisierung: Aufträge mit höherer Energie zuerst, um maximale Kostenersparnis zu erreichen",
+    "visualisierung": "Visualisierung: Im Chart sehen Sie hohe blaue Spitzen (alle Lasten) bei niedrigem roten Strompreis = erfolgreiche Optimierung!",
+    "demand_response": "Demand Response Vergütung: 50% des Regelbetrags für vermiedene Last in Hochpreis-Zeiten",
+    "flexibilitaet": "Flexibilitätsprämie: 80% des Leistungspreises für bereitgestellte Lastverschiebung (kW)",
+    "mindestkriterium": "Mindestkriterium: Optimierung wird nur ausgeführt bei >5% Kostenersparnis",
+    "constraints": "Technische Constraints: 15 min Rüstzeit bei Materialwechsel, 20 min Aufwärmzeit berücksichtigt"
+  },
+  "alerts": {
+    "optimization_success": "✅ Optimierung erfolgreich! Energiekosten um {percent}% reduziert ({amount} € gespart)",
+    "optimization_success_detail": "Alle {count} Aufträge wurden in die günstigsten verfügbaren Zeitfenster verschoben",
+    "optimization_insufficient": "⚠️ Optimierung ergab nur {percent}% Ersparnis ({amount} €). Mindestens 5% erforderlich. Bitte Strompreise anpassen oder Produktion beibehalten."
+  },
+  "errors": {
+    "no_data": "Keine Daten verfügbar",
+    "api_error": "Fehler beim Laden der Daten",
+    "optimization_failed": "Optimierung fehlgeschlagen"
+  },
+  "maschinen": {
+    "laser": "Laser",
+    "tapone": "TapOne",
+    "deburrer": "Deburrer",
+    "manuell": "Manuell"
+  },
+  "prozesse": {
+    "aufwaermen": "Aufwärmen",
+    "ruestzeit": "Rüstzeit",
+    "ruestzeit_material": "Rüstzeit Material",
+    "ruestzeit_dicke": "Rüstzeit Dicke",
+    "schneiden": "Schneiden",
+    "entgraten": "Entgraten",
+    "gewinde": "Gewinde",
+    "kontrolle": "Kontrolle",
+    "qk": "QK"
+  },
+  "meta": {
+    "language": "de",
+    "language_name": "Deutsch",
+    "version": "1.0.0",
+    "last_updated": "2025-01-27"
+  }
+}

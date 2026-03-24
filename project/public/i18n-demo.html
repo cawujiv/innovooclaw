@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n Demo - EFDM Lastmanagement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2d3748;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        
+        .lang-btn {
+            padding: 10px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #5568d3;
+        }
+        
+        .demo-section {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .demo-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            align-items: center;
+        }
+        
+        .demo-item:last-child {
+            border-bottom: none;
+        }
+        
+        .demo-label {
+            font-weight: bold;
+            color: #4a5568;
+        }
+        
+        .demo-value {
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .status.success {
+            background: #c6f6d5;
+            color: #276749;
+        }
+        
+        .status.info {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+        
+        code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .test-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+        
+        .console-output {
+            background: #1a202c;
+            color: #68d391;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-info {
+            background: #ebf4ff;
+            border-color: #4299e1;
+            color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="card">
+            <div class="lang-switcher">
+                <span style="color: #718096; font-weight: bold;">🌍 Sprache / Language:</span>
+                <button onclick="switchLanguage('de')" id="lang-de" class="lang-btn active">🇩🇪 DE</button>
+                <button onclick="switchLanguage('en')" id="lang-en" class="lang-btn">🇬🇧 EN</button>
+            </div>
+            
+            <h1 id="title">Lade...</h1>
+            <p class="subtitle" id="subtitle">Lade...</p>
+            <p class="subtitle" id="batch-info">Lade...</p>
+            
+            <div class="alert alert-info" style="margin-top: 20px;">
+                <strong>ℹ️ Demo-Modus:</strong> Dies ist eine Demonstration der i18n-Funktionalität. 
+                Wechseln Sie die Sprache mit den Buttons oben und beobachten Sie die Änderungen!
+            </div>
+        </div>
+
+        <!-- i18n Status -->
+        <div class="card">
+            <h2>🔧 i18n Status</h2>
+            <div class="demo-section">
+                <div class="demo-item">
+                    <div class="demo-label">Status:</div>
+                    <div class="demo-value"><span class="status" id="i18n-status">Wird geladen...</span></div>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label">Aktuelle Sprache:</div>
+                    <div class="demo-value" id="current-lang">-</div>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label">Verfügbare Sprachen:</div>
+                    <div class="demo-value" id="available-langs">-</div>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label">Browser-Sprache:</div>
+                    <div class="demo-value" id="browser-lang">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Übersetzungs-Beispiele -->
+        <div class="card">
+            <h2>📖 Übersetzungs-Beispiele</h2>
+            
+            <h3 style="color: #4a5568; margin: 20px 0 10px 0;">1. Einfache Übersetzungen</h3>
+            <div class="demo-section">
+                <div class="demo-item">
+                    <div class="demo-label"><code>app.title</code></div>
+                    <div class="demo-value" id="demo-app-title">-</div>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label"><code>buttons.optimize</code></div>
+                    <div class="demo-value" id="demo-btn-optimize">-</div>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label"><code>strompreise.title</code></div>
+                    <div class="demo-value" id="demo-strompreis-title">-</div>
+                </div>
+            </div>
+
+            <h3 style="color: #4a5568; margin: 20px 0 10px 0;">2. Mit Platzhaltern</h3>
+            <div class="demo-section">
+                <div class="demo-item">
+                    <div class="demo-label"><code>alerts.optimization_success</code></div>
+                    <div class="demo-value" id="demo-alert-success">-</div>
+                </div>
+            </div>
+
+            <h3 style="color: #4a5568; margin: 20px 0 10px 0;">3. Verschachtelte Keys</h3>
+            <div class="demo-section">
+                <div class="demo-item">
+                    <div class="demo-label"><code>popup.kategorie_guenstig</code></div>
+                    <div class="demo-value" id="demo-category">-</div>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label"><code>auftraege.units.kwh</code></div>
+                    <div class="demo-value" id="demo-unit">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tests -->
+        <div class="card">
+            <h2>🧪 Interaktive Tests</h2>
+            <div class="test-buttons">
+                <button class="test-btn" onclick="testTranslation()">Test: Einzelne Übersetzung</button>
+                <button class="test-btn" onclick="testPlaceholders()">Test: Platzhalter</button>
+                <button class="test-btn" onclick="testAllKeys()">Test: Alle Keys anzeigen</button>
+            </div>
+            <div class="console-output" id="console-output">
+                Konsole bereit. Klicken Sie auf einen Test-Button...
+            </div>
+        </div>
+    </div>
+
+    <!-- i18n laden -->
+    <script src="/scripts/i18n.js"></script>
+    
+    <script>
+        let consoleLog = [];
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
+            const line = `[${timestamp}] ${prefix} ${message}`;
+            consoleLog.push(line);
+            
+            const output = document.getElementById('console-output');
+            output.innerHTML = consoleLog.slice(-20).join('\n');
+            output.scrollTop = output.scrollHeight;
+        }
+        
+        async function init() {
+            try {
+                log('Initialisiere i18n...');
+                await window.i18n.initI18n();
+                log('i18n erfolgreich initialisiert!', 'success');
+                
+                updateStatus();
+                updateDemoContent();
+                
+            } catch (error) {
+                log(`Fehler: ${error.message}`, 'error');
+                document.getElementById('i18n-status').textContent = 'Fehler';
+                document.getElementById('i18n-status').className = 'status error';
+            }
+        }
+        
+        function updateStatus() {
+            const currentLang = window.i18n.getCurrentLanguage();
+            const availableLangs = window.i18n.getAvailableLanguages();
+            const browserLang = window.i18n.detectBrowserLanguage();
+            
+            document.getElementById('i18n-status').textContent = 'Geladen';
+            document.getElementById('i18n-status').className = 'status success';
+            
+            document.getElementById('current-lang').textContent = currentLang.toUpperCase();
+            document.getElementById('available-langs').textContent = 
+                availableLangs.map(l => `${l.flag} ${l.name}`).join(', ');
+            document.getElementById('browser-lang').textContent = browserLang.toUpperCase();
+            
+            log(`Status aktualisiert: ${currentLang}`);
+        }
+        
+        function updateDemoContent() {
+            const t = window.i18n.t;
+            
+            // Header
+            document.getElementById('title').textContent = t('app.title');
+            document.getElementById('subtitle').textContent = t('app.subtitle');
+            document.getElementById('batch-info').textContent = t('app.batch_info');
+            
+            // Beispiele
+            document.getElementById('demo-app-title').textContent = t('app.title');
+            document.getElementById('demo-btn-optimize').textContent = t('buttons.optimize');
+            document.getElementById('demo-strompreis-title').textContent = t('strompreise.title');
+            
+            // Mit Platzhaltern
+            document.getElementById('demo-alert-success').textContent = 
+                t('alerts.optimization_success', { percent: 12.5, amount: 8.50 });
+            
+            // Verschachtelt
+            document.getElementById('demo-category').textContent = t('popup.kategorie_guenstig');
+            document.getElementById('demo-unit').textContent = t('auftraege.units.kwh');
+            
+            log('Demo-Inhalte aktualisiert', 'success');
+        }
+        
+        async function switchLanguage(lang) {
+            log(`Wechsle zu Sprache: ${lang}`);
+            
+            try {
+                await window.i18n.setLanguage(lang);
+                
+                // Buttons aktualisieren
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.getElementById(`lang-${lang}`).classList.add('active');
+                
+                updateStatus();
+                updateDemoContent();
+                
+                log(`Sprache gewechselt zu: ${lang}`, 'success');
+                
+            } catch (error) {
+                log(`Fehler beim Sprachwechsel: ${error.message}`, 'error');
+            }
+        }
+        
+        function testTranslation() {
+            const key = 'app.title';
+            const result = window.i18n.t(key);
+            log(`Test: window.i18n.t('${key}')`);
+            log(`→ Ergebnis: "${result}"`, 'success');
+        }
+        
+        function testPlaceholders() {
+            const key = 'alerts.optimization_success';
+            const params = { percent: 15.5, amount: 12.75 };
+            const result = window.i18n.t(key, params);
+            log(`Test: window.i18n.t('${key}', ${JSON.stringify(params)})`);
+            log(`→ Ergebnis: "${result}"`, 'success');
+        }
+        
+        function testAllKeys() {
+            log('Verfügbare Übersetzungs-Keys:');
+            log('─────────────────────────────');
+            
+            const keys = [
+                'app.title',
+                'app.subtitle',
+                'strompreise.title',
+                'buttons.optimize',
+                'buttons.reset',
+                'summary.energie.label',
+                'stats.gesamtenergie',
+                'chart.title',
+                'timeline.title',
+                'auftraege.title',
+                'strategie.title'
+            ];
+            
+            keys.forEach(key => {
+                const value = window.i18n.t(key);
+                log(`  ${key}: "${value.substring(0, 50)}${value.length > 50 ? '...' : ''}"`);
+            });
+            
+            log('─────────────────────────────');
+            log(`Gesamt: ${keys.length} Keys getestet`, 'success');
+        }
+        
+        // Init beim Laden
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

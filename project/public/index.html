@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Energieflexible Produktionsplanung - Demand Response</title>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <link rel="stylesheet" href="/styles/main.css">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="card" style="position: relative;">
+            <img src="EFDM_Lastanpassung.png" alt="EFDM Lastanpassung" style="position: absolute; right: 25px; top: 25px; max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+          
+    <h1 data-i18n="app.title">⚡ Energieflexible Produktionsplanung</h1>
+    <p class="subtitle" data-i18n="app.subtitle">Demand Response System - Day-Ahead Optimierung</p>
+    <p class="subtitle" id="batch-info">Batch 1 - Schicht 1 & 2 (wird geladen...)</p>
+
+        </div>
+
+        <!-- Strompreis-Konfiguration -->
+        <div class="card">
+            <h2 data-i18n="strompreise.title">💰 Day-Ahead Strompreise (EPEX Spot)</h2>
+            <p style="color: #718096; margin-bottom: 15px;">
+                Simulierte Strompreise für die nächsten 24 Stunden. Werte können angepasst werden:
+            </p>
+            <div class="strompreis-editor" id="strompreis-editor">
+                <!-- Wird dynamisch gefüllt -->
+            </div>
+            <div class="action-buttons">
+                <button class="action-btn btn-optimize" onclick="optimiereNachStrompreis()">
+                    ⚡ Energiekostenoptimiert Planen
+                </button>
+                <button class="action-btn btn-reset" onclick="resetSimulation()">
+                    🔄 Neue Simulation mit anderen Werten
+                </button>
+            </div>
+            <div id="optimization-alert" style="display: none;"></div>
+        </div>
+
+        <!-- Zusammenfassung -->
+        <div class="summary-cards">
+            <div class="summary-card card-blue">
+                <div class="number" id="summary-energie">33.31</div>
+                <div class="label">kWh Gesamtenergie</div>
+            </div>
+            <div class="summary-card card-red">
+                <div class="number" id="summary-kosten-original">9.99</div>
+                <div class="label">€ Kosten (Original)</div>
+            </div>
+            <div class="summary-card card-green">
+                <div class="number" id="summary-kosten-optimiert">9.99</div>
+                <div class="label">€ Kosten (Optimiert)</div>
+            </div>
+            <div class="summary-card card-orange">
+                <div class="number" id="summary-ersparnis">0.00</div>
+                <div class="label">€ Energiekostenersparnis</div>
+            </div>
+            <div class="summary-card card-teal">
+                <div class="number" id="summary-verguetung">0.00</div>
+                <div class="label">€ Flexibilitätsvergütung</div>
+            </div>
+        </div>
+
+        <!-- Kennzahlen Vergleich -->
+        <div class="comparison-grid">
+            <!-- Aktuelle Planung -->
+            <div class="card">
+                <h3>📊 Optimierte Planung</h3>
+                <div class="stats-grid" style="grid-template-columns: 1fr;">
+                    <div class="stat-box stat-blue">
+                        <div class="label">Gesamtenergie</div>
+                        <div class="value" id="stat-energie">33.31 kWh</div>
+                    </div>
+                    <div class="stat-box stat-green">
+                        <div class="label">Durchschn. Strompreis</div>
+                        <div class="value" id="stat-durchschnittspreis">0.30 €/kWh</div>
+                    </div>
+                    <div class="stat-box stat-red">
+                        <div class="label">Energiekosten</div>
+                        <div class="value" id="stat-energiekosten">9.99 €</div>
+                    </div>
+                    <div class="stat-box stat-orange">
+                        <div class="label">Aufträge in Hochpreis-Zeit</div>
+                        <div class="value" id="stat-hochpreis">0</div>
+                    </div>
+                    <div class="stat-box stat-purple">
+                        <div class="label">Vermiedene Spitzenlast</div>
+                        <div class="value" id="stat-vermieden">0 kW</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vergütungsberechnung -->
+            <div class="card">
+                <h3>💵 Vergütung & Einsparungen</h3>
+                <div id="verguetung-details">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Überlagertes Lastprofil & Strompreis Chart -->
+        <div class="card">
+            <h2>📈 Lastprofil & Strompreisverlauf - Vorher/Nachher-Vergleich</h2>
+            <div class="alert alert-info" style="margin-bottom: 15px;">
+                <strong>📊 Vorher/Nachher-Vergleich:</strong><br>
+                • <span style="color: #a0aec0; font-weight: bold;">┄┄ Graue gestrichelte Linie:</span> Original-Lastprofil (vor Optimierung)<br>
+                • <span style="color: #4299e1; font-weight: bold;">── Blaue durchgezogene Linie:</span> Optimiertes Lastprofil (nach Optimierung)<br>
+                • <span style="color: #f56565; font-weight: bold;">▓▓ Roter Hintergrund:</span> Strompreisverlauf (je höher, desto teurer)<br><br>
+                <strong>✅ Erfolgreiche Optimierung erkennen:</strong><br>
+                • Hohe blaue Spitzen (Leistung) bei niedrigem roten Hintergrund (Strompreis) = Hochlast in günstiger Zeit ✓<br>
+                • <strong>Sichtbare Verschiebung</strong> zwischen grauer und blauer Linie zeigt die erfolgte Lastverschiebung!
+            </div>
+            <div class="chart-container">
+                <canvas id="combinedChart"></canvas>
+            </div>
+            
+            <!-- Prozess-Timeline MATRIX -->
+            <div class="prozess-timeline">
+                <div class="timeline-title">⚙️ Prozess-Timeline Matrix (Zeit × Maschine)</div>
+                <p style="color: #718096; font-size: 0.9em; margin-bottom: 10px;">
+                    💡 <strong>Tipp:</strong> Bewegen Sie die Maus über einen Prozess für detaillierte Informationen. Die Y-Achse zeigt die verschiedenen Maschinen, die X-Achse die Zeit.
+                </p>
+                <div class="timeline-legend" id="timeline-legend">
+                    <div class="legend-item">
+                        <div class="legend-color maschine-laser"></div>
+                        <span>🔴 Laser (Schneiden)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color maschine-tapone"></div>
+                        <span>🟣 TapOne (Gewinde)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color maschine-deburrer"></div>
+                        <span>🟢 Deburrer (Entgraten)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color maschine-manuell"></div>
+                        <span>⚫ Manuell (QK/Kontrolle)</span>
+                    </div>
+                </div>
+                <div class="timeline-container" id="timeline-container">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Optimierter Produktionsplan -->
+        <div class="card">
+            <h2>📋 Optimierter Produktionsplan</h2>
+            <p style="color: #718096; margin-bottom: 20px;">
+                Aufträge wurden energiekostenoptimiert angeordnet. 
+                <span style="background: #fef5e7; padding: 2px 8px; border-radius: 4px; font-weight: bold;">
+                    Orange markiert = Schicht 2
+                </span>
+            </p>
+            <div id="auftrags-liste">
+                <!-- Wird dynamisch gefüllt -->
+            </div>
+        </div>
+
+        <!-- Optimierungs-Strategie Erklärung -->
+        <div class="info-box">
+            <h3>🎯 Angewandte Optimierungsstrategie: Kostenminimierung</h3>
+            <ul id="strategie-info">
+                <li><strong>Ziel:</strong> Maximale Energiekostenersparnis durch optimale Verschiebung ALLER Aufträge in günstige Zeitfenster</li>
+                <li><strong>ALLE Aufträge</strong> werden nach günstigstem Strompreis sortiert und in die günstigsten verfügbaren Zeitfenster verschoben</li>
+                <li><strong>Priorisierung:</strong> Aufträge mit höherer Energie zuerst, um maximale Kostenersparnis zu erreichen</li>
+                <li><strong>Visualisierung:</strong> Im Chart sehen Sie hohe blaue Spitzen (alle Lasten) bei niedrigem roten Strompreis = erfolgreiche Optimierung!</li>
+                <li><strong>Demand Response Vergütung:</strong> 50% des Regelbetrags für vermiedene Last in Hochpreis-Zeiten</li>
+                <li><strong>Flexibilitätsprämie:</strong> 80% des Leistungspreises für bereitgestellte Lastverschiebung (kW)</li>
+                <li><strong>Mindestkriterium:</strong> Optimierung wird nur ausgeführt bei >5% Kostenersparnis</li>
+                <li><strong>Technische Constraints:</strong> 15 min Rüstzeit bei Materialwechsel, 20 min Aufwärmzeit berücksichtigt</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Popup für Prozessdetails -->
+    <div id="prozess-popup" class="prozess-popup" style="display: none;"></div>
+    <script src="/i18n/i18n.js"></script>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
