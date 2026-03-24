@@ -1,0 +1,50 @@
+# ─── Caddyfile für innovooClaw (Linux) ────────────────────────────────────────
+# Start: sudo systemctl start caddy
+# Voraussetzung: Fritz!Box leitet Port 80 + 443 auf diesen Linux-Server weiter
+# ─────────────────────────────────────────────────────────────────────────────
+
+{
+    # Let's Encrypt-Konto E-Mail (für Zertifikats-Benachrichtigungen)
+    email manfred@innovoo.de
+
+    # Caddy Admin API (nur lokal erreichbar)
+    admin localhost:2019
+}
+
+kit-werk.myfritz.link {
+    # Alle Anfragen an innovooClaw (Port 3000) weiterleiten
+    reverse_proxy localhost:3000 {
+        # Echte Client-IP weitergeben (für Logging und localhost-Checks)
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+        header_up Host {host}
+
+        # Timeouts erhöhen für langsame Agent-Antworten (LLM kann dauern)
+        transport http {
+            dial_timeout         30s
+            response_header_timeout 60s
+            read_timeout        120s
+        }
+    }
+
+    # Zugriffs-Log (rotiert automatisch)
+    log {
+        output file /opt/innovooclaw/logs/caddy-access.log {
+            roll_size 10mb
+            roll_keep 3
+        }
+        format json
+    }
+
+    # Sicherheits-Header
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        -Server
+    }
+}
+
+# HTTP → HTTPS Redirect (Port 80 muss offen sein für ACME-Challenge!)
+http://kit-werk.myfritz.link {
+    redir https://{host}{uri} permanent
+}

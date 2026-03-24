@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>innovooClaw – wird geladen…</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --border: #1e1e2e;
+    --accent-a: #ff6b2b;   /* überschrieben durch UIBuilder */
+    --accent-b: #00e5a0;
+    --accent-c: #a78bfa;
+    --text: #e8e8f0;
+    --muted: #5a5a7a;
+    --card: #16161f;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; overflow-x: hidden; }
+
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(107,138,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(107,138,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px; pointer-events: none; z-index: 0;
+  }
+
+  /* ─── HEADER ─── */
+  header { position: relative; z-index: 10; padding: 48px 40px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 20px; }
+  .logo { font-size: 2rem; filter: drop-shadow(0 0 12px rgba(255,107,43,0.6)); animation: pulse 3s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{filter:drop-shadow(0 0 12px rgba(255,107,43,0.6))} 50%{filter:drop-shadow(0 0 24px rgba(255,107,43,1))} }
+  .header-text h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
+  .header-text p { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+  .slack-badge { background: #4a154b; border: 1px solid #6b2d6b; border-radius: 8px; padding: 8px 16px; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #e8b4e8; display: flex; align-items: center; gap: 8px; width: 100%; }
+
+  /* --- STATUS-BADGES fixed bottom-right ueber Memory-Widget --- */
+  #status-badges {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 8998;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+    width: 210px;
+    pointer-events: all;
+  }
+  #status-badges .ollama-badge { width: 100%; margin-left: 0; }
+  .slack-dot { width: 8px; height: 8px; border-radius: 50%; background: #00e5a0; animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ─── STREAMING CURSOR ─── */
+  .stream-cursor { display: inline-block; animation: stream-blink 0.7s step-end infinite; color: #6ee7b7; font-weight: bold; line-height: 1; }
+  @keyframes stream-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* ─── ARCHITECTURE ─── */
+  .architecture { position: relative; z-index: 10; padding: 48px 40px; border-bottom: 1px solid var(--border); }
+  .section-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+  .arch-diagram { display: grid; grid-template-columns: 200px 1fr 200px; gap: 0; align-items: center; max-width: 1100px; margin: 0 auto; }
+
+  .slack-node { background: linear-gradient(135deg, #2d0e30, #4a154b); border: 1px solid #6b2d6b; border-radius: 16px; padding: 24px; text-align: center; }
+  .slack-node .node-icon { font-size: 2.4rem; margin-bottom: 8px; }
+  .slack-node .node-title { font-weight: 700; font-size: 0.95rem; }
+  .slack-node .node-sub { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #c0a0c0; margin-top: 4px; }
+
+  #arch-agents { display: flex; flex-direction: column; gap: 10px; padding: 0 20px; }
+  .agent-row { display: flex; align-items: center; gap: 12px; }
+  .arrow-line { flex: 1; height: 2px; position: relative; }
+  .arrow-line::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, var(--color), var(--color)); }
+  .arrow-line::after { content: '▶'; position: absolute; right: -1px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--color); }
+  .arrow-back { flex: 1; height: 2px; position: relative; }
+  .arrow-back::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--color), var(--color), transparent); }
+  .arrow-back::after { content: '◀'; position: absolute; left: -1px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--color); }
+  .agent-chip { border-radius: 12px; padding: 12px 18px; border: 1px solid; min-width: 150px; text-align: center; cursor: pointer; transition: transform 0.2s; }
+  .agent-chip:hover { transform: translateY(-2px); }
+  .chip-icon { font-size: 1.3rem; }
+  .chip-name { font-weight: 700; font-size: 0.85rem; margin-top: 4px; }
+  .chip-desc { font-family: 'Space Mono', monospace; font-size: 0.58rem; color: var(--muted); margin-top: 2px; }
+
+  .resources-node { display: flex; flex-direction: column; gap: 7px; }
+  .res-chip { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 7px 13px; font-family: 'Space Mono', monospace; font-size: 0.63rem; display: flex; align-items: center; gap: 8px; transition: border-color 0.3s; }
+
+  /* ─── AGENT CARDS ─── */
+  .agents-section { position: relative; z-index: 10; padding: 48px 40px; border-bottom: 1px solid var(--border); }
+  .agents-grid { display: grid; gap: 24px; margin-top: 24px; }
+  .agent-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+  .agent-card-header { padding: 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+  .agent-meta { flex: 1; }
+  .agent-name { font-size: 1.1rem; font-weight: 800; }
+  .agent-card-body { padding: 24px; }
+  .capability-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  /* ─── DEMO / CHAT ─── */
+  .demo-section { position: relative; z-index: 10; padding: 48px 40px; border-bottom: 1px solid var(--border); }
+  .demo-grid { display: grid; grid-template-columns: 260px 1fr; gap: 24px; margin-top: 24px; max-width: 1100px; }
+  .slack-sidebar { background: #1a0a1c; border: 1px solid #3d1a3f; border-radius: 16px; overflow: hidden; }
+  .sidebar-header { padding: 16px 18px; background: #2d0e30; font-size: 0.8rem; font-weight: 700; border-bottom: 1px solid #3d1a3f; color: #e8b4e8; }
+  .sidebar-list { padding: 12px 0; }
+  .sidebar-item { padding: 8px 18px; font-size: 0.8rem; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.2s; }
+  .sidebar-item:hover, .sidebar-item.active { background: rgba(255,255,255,0.06); }
+  .ch-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .ch-name { color: #c0a0c0; }
+  .sidebar-item.active .ch-name { color: #fff; }
+
+  .chat-window { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; height: 640px; min-height: 0; }
+  .chat-topbar { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; background: var(--surface); flex-wrap: wrap; }
+  .chat-topbar .ch-icon { font-size: 1.2rem; }
+  .chat-topbar .ch-title { font-weight: 700; font-size: 0.9rem; }
+  .chat-messages { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; min-height: 0; scroll-behavior: smooth; }
+  .chat-messages::-webkit-scrollbar { width: 5px; }
+  .chat-messages::-webkit-scrollbar-track { background: transparent; }
+  .chat-messages::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 3px; }
+  .msg { display: flex; gap: 12px; align-items: flex-start; opacity: 0; transform: translateY(10px); transition: opacity 0.4s, transform 0.4s; }
+  .msg.visible { opacity: 1; transform: none; }
+  .msg-avatar { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .avatar-user { background: #2d3a5c; }
+  .avatar-a { background: rgba(255,107,43,0.2); border: 1px solid rgba(255,107,43,0.4); }
+  .avatar-b { background: rgba(0,229,160,0.2); border: 1px solid rgba(0,229,160,0.4); }
+  .avatar-c { background: rgba(107,138,255,0.2); border: 1px solid rgba(107,138,255,0.4); }
+  /* d, e, f werden durch UIBuilder dynamisch injiziert */
+  .msg-content { flex: 1; }
+  .msg-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .msg-name { font-size: 0.82rem; font-weight: 700; }
+  .msg-time { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+  .msg-text { font-size: 0.82rem; line-height: 1.6; color: #c8c8d8; }
+  .msg-text code { font-family: 'Space Mono', monospace; font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; color: var(--accent-b); }
+  .typing-indicator { display: flex; align-items: center; gap: 4px; padding: 6px 0; opacity: 0; transition: opacity 0.3s; }
+  .typing-indicator.visible { opacity: 1; }
+  .typing-dot { width: 6px; height: 6px; border-radius: 50%; animation: bounce 1.2s ease-in-out infinite; }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+  .action-card { margin-top: 8px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid; border-radius: 8px; padding: 12px 16px; font-size: 0.78rem; }
+  .action-card-title { font-weight: 700; font-size: 0.75rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .action-card ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .action-card ul li { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .action-card ul li::before { content: '→'; }
+
+  .chat-input-bar { padding: 16px 20px; border-top: 1px solid var(--border); display: flex; gap: 10px; flex-direction: column; }
+  .chat-input { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; color: var(--text); font-family: 'Syne', sans-serif; font-size: 0.82rem; outline: none; resize: none; overflow: hidden; line-height: 1.5; }
+  .chat-input:focus { border-color: rgba(107,138,255,0.5); }
+  .send-btn { background: var(--accent-c); border: none; border-radius: 10px; padding: 10px 16px; color: #000; font-weight: 700; cursor: pointer; font-size: 0.85rem; transition: opacity 0.2s; }
+  .send-btn:hover { opacity: 0.85; }
+
+  /* Scenario tabs */
+  .scenario-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 16px; color: var(--muted); font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .tab-btn:hover { border-color: var(--accent-c); color: var(--text); }
+  .tab-btn.active { background: rgba(107,138,255,0.1); border-color: var(--accent-c); color: var(--accent-c); }
+
+  /* ─── ACCESS MATRIX ─── */
+  .matrix-section { position: relative; z-index: 10; padding: 48px 40px; }
+  .matrix-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 0.8rem; overflow-x: auto; }
+  .matrix-table th { padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); font-weight: 700; text-align: left; font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .matrix-table td { padding: 12px 16px; border: 1px solid var(--border); background: var(--card); vertical-align: middle; }
+  .matrix-table tr:hover td { background: var(--surface); }
+  .perm-full { background: rgba(0,229,160,0.1); color: var(--accent-b); border: 1px solid rgba(0,229,160,0.3); border-radius: 6px; padding: 3px 10px; font-family: 'Space Mono', monospace; font-size: 0.65rem; display: inline-block; }
+  .perm-read { background: rgba(107,138,255,0.1); color: var(--accent-c); border: 1px solid rgba(107,138,255,0.3); border-radius: 6px; padding: 3px 10px; font-family: 'Space Mono', monospace; font-size: 0.65rem; display: inline-block; }
+  .perm-none { color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.65rem; }
+  .resource-name { display: flex; align-items: center; gap: 10px; font-family: 'Space Mono', monospace; font-size: 0.72rem; }
+
+  /* ─── LOADING-STATE ─── */
+  .ui-loading { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 40px; color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.75rem; }
+  .ui-loading::before { content: ''; width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent-a); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes saldoPulse { 0%{color:#ffffff;text-shadow:0 0 12px rgba(0,229,160,0.8)} 100%{color:#00e5a0;text-shadow:none} }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .arch-diagram, .demo-grid { grid-template-columns: 1fr; }
+    .agents-grid { grid-template-columns: 1fr !important; }
+    #arch-agents { padding: 0; }
+    header { flex-direction: column; align-items: flex-start; }
+    .architecture, .agents-section, .demo-section, .matrix-section { padding: 32px 20px; }
+    .matrix-section { overflow-x: auto; }
+  }
+
+  /* ─── OLLAMA INDICATOR ─── */
+  .ollama-badge {
+    background: #0e1a12;
+    border: 1px solid #1a3a22;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: #4a7a5a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    transition: border-color 0.4s, color 0.4s, background 0.4s;
+    position: relative;
+  }
+  .ollama-badge.active {
+    background: #0a1f10;
+    border-color: #00e5a0;
+    color: #00e5a0;
+  }
+  .ollama-badge.error {
+    background: #1a0a0a;
+    border-color: #7a2a2a;
+    color: #c05050;
+  }
+  .ollama-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #2a4a32;
+    flex-shrink: 0;
+    transition: background 0.4s;
+  }
+  .ollama-badge.active .ollama-dot {
+    background: #00e5a0;
+    animation: ollama-pulse 1.4s ease-in-out infinite;
+  }
+  .ollama-badge.error .ollama-dot {
+    background: #c05050;
+    animation: none;
+  }
+  @keyframes ollama-pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(0,229,160,0.6); }
+    50%      { box-shadow: 0 0 0 5px rgba(0,229,160,0); }
+  }
+  .ollama-label { line-height: 1.2; }
+  .ollama-label-main { display: block; }
+  .ollama-label-sub  { display: block; font-size: 0.58rem; color: inherit; opacity: 0.65; margin-top: 1px; }
+  .ollama-flash {
+    position: absolute; inset: 0; border-radius: 8px;
+    background: rgba(0,229,160,0.08);
+    opacity: 0; pointer-events: none;
+    animation: ollama-flash-anim 0.6s ease-out;
+  }
+  @keyframes ollama-flash-anim { 0%{opacity:1} 100%{opacity:0} }
+
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════════════ -->
+<header id="app-header">
+  <div class="logo">🦞</div>
+  <div class="header-text">
+    <h1>innovooClaw — Deine persönliche KI-Infrastruktur</h1>
+    <p>innovooClaw · selbst gehostet · deine Daten · dynamisch aus Skills</p>
+  </div>
+  <!-- Badges verschoben nach #status-badges (fixed bottom-right) -->
+</header>
+
+<!-- ═══ ARCHITEKTUR-DIAGRAMM ══════════════════════════════════════════════════ -->
+<section class="architecture">
+  <p class="section-label">Systemarchitektur</p>
+
+  <div class="arch-diagram">
+    <!-- Slack-Knoten (statisch) -->
+    <div class="slack-node">
+      <div class="node-icon">💬</div>
+      <div class="node-title">Slack</div>
+      <div class="node-sub">Steuerungszentrum</div>
+      <div class="node-sub" style="margin-top:10px;font-size:0.6rem;line-height:1.8;" id="arch-slack-channels">
+        <!-- dynamisch: UIBuilder füllt Kanäle ein -->
+        <div class="ui-loading" style="padding:12px;justify-content:center;"></div>
+      </div>
+    </div>
+
+    <!-- Agent-Chips: komplett dynamisch -->
+    <div id="arch-agents">
+      <div class="ui-loading">Skills werden geladen…</div>
+    </div>
+
+    <!-- Ressourcen (statisch) -->
+    <div class="resources-node">
+      <div class="res-chip">📅 Google Calendar</div>
+      <div class="res-chip">📁 Google Drive</div>
+      <div class="res-chip">🏦 Nordigen Banking</div>
+      <div class="res-chip">🚌 VVS Stuttgart</div>
+      <div class="res-chip">❤️ Garmin Health</div>
+      <div class="res-chip">📧 Gmail / E-Mail</div>
+      <div class="res-chip">🧠 Memory (JSON)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AGENT-CARDS ═════════════════════════════════════════════════════════ -->
+<section class="agents-section">
+  <p class="section-label" id="agents-section-label">Die Agents im Detail</p>
+  <!-- komplett dynamisch: UIBuilder baut alle Cards -->
+  <div class="agents-grid" id="agents-grid">
+    <div class="ui-loading">Agenten-Profile werden geladen…</div>
+  </div>
+</section>
+
+<!-- ═══ LIVE-DEMO / CHAT ══════════════════════════════════════════════════════ -->
+<section class="demo-section">
+  <p class="section-label">Live-Demo · Slack-Gespräche</p>
+
+  <!-- Scenario tabs – echte API-Calls -->
+  <div class="scenario-tabs">
+    <button class="tab-btn active" onclick="quickAction('morning',this)">☀️ Morgen-Briefing</button>
+    <button class="tab-btn" onclick="quickAction('budget',this)">💳 Ausgaben-Check</button>
+    <button class="tab-btn" onclick="quickAction('travel',this)">✈️ Reise planen</button>
+    <button class="tab-btn" onclick="quickAction('health',this)">❤️ Fitness-Report</button>
+    <button class="tab-btn" onclick="quickAction('swim',this)">🏊 Swim-Analyse</button>
+  </div>
+
+  <div class="demo-grid">
+    <!-- Sidebar: Header statisch, Kanäle dynamisch -->
+    <div class="slack-sidebar">
+      <div class="sidebar-header">🦞 innovooClaw Workspace</div>
+      <div class="sidebar-list" id="sidebar-channels">
+        <!-- dynamisch: UIBuilder füllt Kanal-Items ein -->
+        <div class="ui-loading" style="padding:16px;">Kanäle laden…</div>
+      </div>
+    </div>
+
+    <!-- Chat-Fenster (statisch, Inhalte sind dynamisch) -->
+    <div class="chat-window">
+      <div class="chat-topbar">
+        <span class="ch-icon" id="chat-icon">🦞</span>
+        <div style="display:flex;flex-direction:column;gap:1px;">
+          <span class="ch-title" id="chat-title" style="color:var(--accent-a)"># leben</span>
+          <span id="chat-agent-desc" style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);">OTTO · Alltag, E-Mail, Kalender</span>
+        </div>
+        <span class="ch-members" id="chat-members-count" style="margin-left:auto;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--muted);">… Agents · 1 Nutzer</span>
+        <span id="mem-indicator" style="font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--muted);margin-left:8px;">🧠 Gedächtnis lädt…</span>
+        <span id="data-legend" style="display:flex;align-items:center;gap:10px;margin-left:12px;font-family:'Space Mono',monospace;font-size:0.58rem;">
+          <span style="color:#888;">Bullets:</span>
+          <span style="color:#ffffff;">○ emuliert</span>
+          <span style="color:#6ee7b7;">● API live</span>
+        </span>
+        <span id="data-status-badges" style="display:flex;gap:5px;margin-left:8px;"></span>
+        <a href="openclaw-dashboard.html" target="openclaw" style="margin-left:8px;font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--accent-c);text-decoration:none;background:rgba(107,138,255,0.1);border:1px solid rgba(107,138,255,0.3);border-radius:8px;padding:5px 12px;">📊 Dashboard ↗</a>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+
+      <div class="chat-input-bar" id="chat-input-bar">
+        <div style="display:flex;gap:10px;align-items:flex-end;">
+          <textarea class="chat-input" id="user-input"
+            placeholder="Frag einen Agent – echte KI-Antworten via Claude Haiku…"
+            rows="1"
+            onkeydown="handleInputKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <button class="send-btn" onclick="sendUserMsg()" title="Senden">→</button>
+            <button onclick="toggleExpand()" id="expand-btn"
+              title="Prompt-Fenster vergrößern"
+              style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:6px 10px;color:var(--muted);cursor:pointer;font-size:0.8rem;transition:all 0.2s;">⛶</button>
+          </div>
+        </div>
+        <div id="expand-hint" style="display:none;font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);">
+          Shift+Enter = Zeilenumbruch &nbsp;|&nbsp; Enter = Senden
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACCESS-MATRIX ══════════════════════════════════════════════════════════ -->
+<section class="matrix-section">
+  <p class="section-label">Zugriffsmatrix · Wer darf welches Tool</p>
+  <div style="overflow-x:auto;">
+    <table class="matrix-table">
+      <!-- komplett dynamisch: UIBuilder baut Spalten aus Skills -->
+      <thead id="matrix-head">
+        <tr><th colspan="10"><div class="ui-loading" style="padding:12px;">Matrix wird geladen…</div></th></tr>
+      </thead>
+      <tbody id="matrix-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════════════════════════ -->
+<script src="data/scenarios.js"></script>
+<script src="data/banking-feed.js"></script>
+<script src="data/agent-registry.js"></script>   <!-- Single Source of Truth: alle Agent-Definitionen -->
+<script src="data/agent-prompts.js"></script>
+<script src="data/routing-rules.js"></script>
+<script src="data/emulation.js"></script>
+<script src="modules/memory.js"></script>
+<script src="modules/renderer.js"></script>
+<script src="modules/feed-banking.js"></script>
+<script src="modules/skill-loader.js"></script>
+<script src="modules/ui-builder.js"></script>
+<script src="modules/agent-api.js"></script>
+
+<script>
+// ── API-Key Konfiguration ─────────────────────────────────────────────────────
+// Muss mit API_SECRET in secrets.env übereinstimmen.
+// Leer lassen wenn API_SECRET nicht gesetzt ist.
+window.INNOVOO_API_KEY = '490c9250d618b14ead4f5b7cb982ec86720349363d9a4762284511916e747331';
+</script>
+
+<script>
+// ── Ladeprüfung ──────────────────────────────────────────────────────────────
+if (typeof scenarios       === 'undefined') console.error('[innovooClaw] ❌ data/scenarios.js');
+if (typeof AgentRegistry   === 'undefined') console.error('[innovooClaw] ❌ data/agent-registry.js');
+if (typeof agentPromptBase === 'undefined') console.warn ('[innovooClaw] ⚠️ data/agent-prompts.js (Fallback benötigt)');
+if (typeof loadAllMemory   === 'undefined') console.error('[innovooClaw] ❌ modules/memory.js');
+if (typeof appendMsg       === 'undefined') console.error('[innovooClaw] ❌ modules/renderer.js');
+if (typeof callAgentAPI    === 'undefined') console.error('[innovooClaw] ❌ modules/agent-api.js');
+if (typeof SkillLoader     === 'undefined') console.error('[innovooClaw] ❌ modules/skill-loader.js');
+if (typeof UIBuilder       === 'undefined') console.error('[innovooClaw] ❌ modules/ui-builder.js');
+
+// ── Quick-Action-Buttons → echte API-Calls ─────────────────────────────────
+const _quickActionPrompts = {
+  morning: { channel: null, prompt: null },  // nutzt triggerBriefing()
+  budget:  { channel: 'finanzen', prompt: 'Analysiere meine Ausgaben diesen Monat. Zeige Kategorien, Summen und ob ich im Budget bin.' },
+  travel:  { channel: 'fitness',  prompt: 'Ich möchte eine Reise planen. Schlage mir Optionen vor und prüfe meinen Kalender auf freie Wochenenden in den nächsten 6 Wochen.' },
+  health:  { channel: 'fitness',  prompt: 'Wie war meine Woche gesundheitlich? Analysiere Schlaf, HRV und Schritte. Was empfiehlst du für das Training morgen?' },
+  swim:    { channel: 'fitness',  prompt: 'Analysiere meine Schwimmeinheiten der letzten 4 Wochen. Wo stehe ich, was soll ich als nächstes verbessern?' },
+};
+
+function quickAction(key, btnEl) {
+  // Tab-Button aktiv setzen
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+
+  const cfg = _quickActionPrompts[key];
+  if (!cfg) return;
+
+  // Morgen-Briefing: eigene Logik
+  if (key === 'morning') {
+    if (channelConfig['leben']) switchChannel('leben');
+    const container = document.getElementById('chat-messages');
+    if (container) { container.innerHTML = ''; }
+    if (typeof triggerBriefing === 'function') triggerBriefing();
+    return;
+  }
+
+  // Anderen Channel aktivieren falls nötig
+  if (cfg.channel) {
+    const targetChannel = Object.entries(channelConfig).find(([ch, c]) =>
+      c.agent === cfg.channel || ch === cfg.channel
+    )?.[0];
+    if (targetChannel) switchChannel(targetChannel);
+  }
+
+  // Prompt ins Input-Feld schreiben und absenden
+  const input = document.getElementById('user-input');
+  if (input && cfg.prompt) {
+    input.value = cfg.prompt;
+    sendUserMsg();
+  }
+}
+
+// ── Start ─────────────────────────────────────────────────────────────────────
+loadScenario('morning', null, true);
+
+loadAllMemory().then(async () => {
+  saveWorking({
+    session_start:   new Date().toISOString(),
+    nachrichten:     0,
+    aktiver_channel: activeChannel,
+    user_agent:      navigator.userAgent.slice(0, 60),
+  });
+  saveEpisode('system', 'Session gestartet', 'session');
+
+  // ① Skills laden (API) ─────────────────────────────────────────────────────
+  await initSkills();
+
+  // ② UI dynamisch aufbauen ──────────────────────────────────────────────────
+  if (typeof UIBuilder !== 'undefined' && _loadedSkills) {
+    UIBuilder.build(_loadedSkills);
+  }
+
+  // ③ System-Prompts mit frischen Skills neu bauen ───────────────────────────
+  rebuildSystemPrompts();
+
+  // ④ Live-Daten laden → Morning-Briefing ───────────────────────────────────
+  loadLiveData().then(() => {
+    if (currentScenario === 'morning' && typeof triggerBriefing === 'function') {
+      triggerBriefing();
+    }
+  });
+});
+</script>
+<script src="modules/memory-widget.js"></script>
+
+<!-- STATUS-BADGES fixed bottom-right ueber Memory-Widget -->
+<div id="status-badges">
+  <div class="ollama-badge" id="ollama-badge" title="Ollama llama3.1:8b - Hybrid-Modus">
+    <div class="ollama-dot" id="ollama-dot"></div>
+    <span class="ollama-label">
+      <span class="ollama-label-main" id="ollama-label-main">🦙 Ollama</span>
+      <span class="ollama-label-sub"  id="ollama-label-sub">wird geprueft...</span>
+    </span>
+    <button id="ollama-toggle" title="Ollama Hybrid-Modus ein/aus" onclick="_ollamaToggle(event)" style="
+      margin-left:8px;padding:2px 7px;border-radius:10px;font-size:0.6rem;
+      font-family:'Space Mono',monospace;cursor:pointer;border:1px solid #444;
+      background:#1a1a2e;color:#6ee7b7;letter-spacing:0.5px;transition:all 0.2s;
+    ">ON</button>
+  </div>
+  <div class="slack-badge">
+    <div class="slack-dot"></div>
+    Steuerung via Slack
+  </div>
+</div>
+
+<script>
+(function repositionMemoryWidget() {
+  var POLL = 200, MAX = 40, n = 0;
+  function adjust() {
+    var mw = document.getElementById('memory-widget');
+    var sb = document.getElementById('status-badges');
+    if (!mw || !sb) { if (++n < MAX) setTimeout(adjust, POLL); return; }
+    function update() {
+      var sbH = sb.getBoundingClientRect().height;
+      mw.style.bottom = (20 + sbH + 10) + 'px';
+    }
+    update();
+    window.addEventListener('resize', update);
+    new MutationObserver(update).observe(sb, {childList:true,subtree:true,attributes:true});
+  }
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', adjust) : adjust();
+})();
+</script>
+
+<script>
+// ── Ollama-Indikator ──────────────────────────────────────────────────────────
+(function() {
+  const badge    = document.getElementById('ollama-badge');
+  const dot      = document.getElementById('ollama-dot');
+  const labelMain = document.getElementById('ollama-label-main');
+  const labelSub  = document.getElementById('ollama-label-sub');
+
+  let lastCompressed  = 0;
+  let lastSavedChars  = 0;
+  let activityTimeout = null;
+  let errorCount      = 0;
+  // 3 Modi: 'hybrid' (grün) | 'off' (orange) | 'only' (blau)
+  let _ollamaMode = 'hybrid';
+  const MODE_CYCLE = ['hybrid', 'off', 'only'];
+  const MODE_CFG = {
+    hybrid: { label: 'HYBRID', color: '#6ee7b7', bg: '#0a1f10', border: '#6ee7b7' },
+    off:    { label: 'OFF',    color: '#fb923c', bg: 'rgba(251,146,60,0.08)', border: '#fb923c' },
+    only:   { label: 'ONLY',  color: '#60a5fa', bg: 'rgba(96,165,250,0.08)', border: '#60a5fa' },
+  };
+
+  window._ollamaToggle = async function(evt) {
+    evt.stopPropagation();
+    const next = MODE_CYCLE[(MODE_CYCLE.indexOf(_ollamaMode) + 1) % 3];
+    const btn = document.getElementById('ollama-toggle');
+    if (btn) btn.textContent = '...';
+    try {
+      await _apiFetch('/api/ollama/mode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode: next })
+      });
+      _ollamaMode = next;
+      _applyToggleStyle();
+    } catch(err) { _applyToggleStyle(); }
+  };
+
+  function _applyToggleStyle() {
+    const btn = document.getElementById('ollama-toggle');
+    if (!btn) return;
+    const cfg = MODE_CFG[_ollamaMode] || MODE_CFG.hybrid;
+    btn.textContent      = cfg.label;
+    btn.style.color      = cfg.color;
+    btn.style.borderColor = cfg.border;
+    btn.style.background  = cfg.bg;
+    // Badge-Rahmenfarbe mitfärben
+    badge.style.borderColor = _ollamaMode === 'off' ? '' : cfg.border;
+  }
+
+  function flashBadge() {
+    const flash = document.createElement('div');
+    flash.className = 'ollama-flash';
+    badge.appendChild(flash);
+    setTimeout(() => flash.remove(), 700);
+  }
+
+  function setActive(stats) {
+    badge.classList.add('active');
+    badge.classList.remove('error');
+
+    const pct   = stats.compressionRate || '0%';
+    const saved = stats.savedChars || 0;
+    const kb    = saved > 1000 ? (saved / 1000).toFixed(1) + ' KB' : saved + ' Zeichen';
+
+    const tokens2 = Math.round((stats.savedChars || 0) / 4);
+    const tkLabel2 = tokens2 > 1000 ? (tokens2 / 1000).toFixed(1) + 'K Token' : tokens2 + ' Token';
+    labelMain.textContent = '🦙 ' + (_hybridMode ? 'Hybrid: aktiv' : 'Pre-Proc: aktiv');
+    labelSub.textContent  = pct + ' · ~' + tkLabel2 + ' gespart · ' + kb;
+
+    // Aktivitäts-Timeout: nach 8s ohne neue Komprimierung → idle
+    if (activityTimeout) clearTimeout(activityTimeout);
+    activityTimeout = setTimeout(() => setIdle(stats), 8000);
+  }
+
+  function setIdle(stats) {
+    badge.classList.remove('active', 'error');
+    const total = stats.compressed || 0;
+    const saved = stats.savedChars  || 0;
+    const kb    = saved > 1000 ? (saved / 1000).toFixed(1) + ' KB' : saved + ' Zeichen';
+    const totalSaved = stats.totalSavedChars || stats.savedChars || 0;
+    const tokens = Math.round(totalSaved / 4);
+    const tkLabel = tokens > 1000 ? '~' + (tokens / 1000).toFixed(1) + 'K Token gespart' : (tokens > 0 ? '~' + tokens + ' Token gespart' : '0 Token gespart');
+    const hybrid  = stats.hybridAnswers || 0;
+    const modeLabel = { hybrid: 'Hybrid: lokal+Claude', off: 'Pre-Proc only', only: 'Nur Ollama (lokal)' };
+    labelMain.textContent = '🦙 ' + (modeLabel[_ollamaMode] || 'Hybrid');
+    labelSub.textContent  = (total > 0 || hybrid > 0)
+      ? (hybrid > 0 ? hybrid + '× lokal · ' : '') + tkLabel
+      : (_ollamaMode === 'off' ? 'Pre-Proc · 0 Token gespart' : 'lokal aktiv · 0 Token gespart');
+  }
+
+  function setError() {
+    badge.classList.add('error');
+    badge.classList.remove('active');
+    labelMain.textContent = '🦙 Ollama';
+    labelSub.textContent  = 'nicht erreichbar';
+  }
+
+  async function pollOllama() {
+    try {
+      const res  = await _apiFetch('/api/ollama/stats', { signal: AbortSignal.timeout(2500) });
+      const data = await res.json();
+
+      errorCount = 0;
+
+      const newCompressed = data.compressed || 0;
+      const newSaved      = data.savedChars  || 0;
+
+      // Modus vom Server synchronisieren
+      if (data.ollamaMode && data.ollamaMode !== _ollamaMode) {
+        _ollamaMode = data.ollamaMode;
+        _applyToggleStyle();
+      }
+
+      // Neue Komprimierung → grün pulsierend
+      if (newCompressed > lastCompressed || newSaved > lastSavedChars) {
+        flashBadge();
+        setActive(data);
+        lastCompressed = newCompressed;
+        lastSavedChars = newSaved;
+      } else {
+        if (!activityTimeout) setIdle(data);
+      }
+
+    } catch (err) {
+      errorCount++;
+      // Erst nach 3 Fehlern in Folge als "nicht erreichbar" markieren
+      if (errorCount >= 3) setError();
+    }
+  }
+
+  // Erste Abfrage sofort, dann alle 3 Sekunden
+  pollOllama();
+  setInterval(pollOllama, 3000);
+})();
+</script>
+
+</body>
+</html>

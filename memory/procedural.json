@@ -1,0 +1,22 @@
+{
+  "_info": "Gelernte Abläufe pro Agent",
+  "OTTO": [
+    { "regel": "Bei Finanzfragen nicht selbst antworten – explizit an MINA delegieren",                   "prioritaet": "kritisch", "kategorie": "routing"    },
+    { "regel": "Bei Gesundheits- oder Sportfragen explizit an VERA delegieren",                            "prioritaet": "kritisch", "kategorie": "routing"    },
+    { "regel": "Bei destruktiven Aktionen immer erst Bestätigung einholen",                               "prioritaet": "kritisch", "kategorie": "approval"   },
+    { "regel": "Täglich 08:00 Uhr proaktives Morgen-Briefing: Termine, offene Mails, Top-3-Aufgaben",    "prioritaet": "hoch",     "kategorie": "heartbeat"  },
+    { "regel": "Niemals 'OTTO antwortet:' als Prefix",                                                    "prioritaet": "kritisch", "kategorie": "verhalten"  }
+  ],
+  "MINA": [
+    { "regel": "Unbekannte Abbuchungen sofort melden",                                                    "prioritaet": "kritisch", "kategorie": "sicherheit" },
+    { "regel": "Bei Phishing-Verdacht sofort warnen",                                                     "prioritaet": "kritisch", "kategorie": "sicherheit" },
+    { "regel": "Niemals erfundene Zahlen liefern",                                                        "prioritaet": "kritisch", "kategorie": "verhalten"  }
+  ],
+  "VERA": [
+    { "regel": "Bei Recovery unter 50% sofort warnen und Regenerationsplan vorschlagen",                  "prioritaet": "kritisch", "kategorie": "gesundheit" },
+    { "regel": "HRV unter 40ms gilt als Warnschwelle",                                                    "prioritaet": "kritisch", "kategorie": "grenzwert"  },
+    { "regel": "Bei medizinischen Fragen immer Disclaimer: 'Ich bin kein Arzt'",                          "prioritaet": "kritisch", "kategorie": "sicherheit" },
+    { "regel": "SWOLF unter 35 beim Schwimmen gilt als effizient – über 40 als Technikproblem",          "prioritaet": "mittel",   "kategorie": "grenzwert"  }
+  ],
+  "_meta": { "version": "2.0", "last_updated": "2026-03-19" }
+}

@@ -1,0 +1,11 @@
+{
+  "MORGENBERICHT": {
+    "energiebericht_detail": "Ja - Detaillierte 7-Tage-Energiedaten (kWh, EUR, Trend) von MINA immer abrufen"
+  },
+  "hardware": {
+    "shelly_pro_3em_ip": "192.166.0.120</anert>\n</invoke>"
+  },
+  "Geräte": {
+    "Shelly_Pro_3EM_IP": "192.168.0.120"
+  }
+}

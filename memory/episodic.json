@@ -1,0 +1,1362 @@
+{
+  "eintraege": [
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:27",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:27",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für heute, Donnerstag 19. März. Welche Termine stehen an?"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:27",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Morgen-Briefing für den Nutzer]\nKalendercheck für heute Donnerstag 19."
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Kalenderabfrage für einen spezifischen Tag]\nBitte zeige alle Termine u"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Donnerstag, 19. März 2025. Alle Termine und Meetings des heuti"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Vera erstellt Morgen-Briefing. Benötigt strukturierte Terminliste für "
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Vera erstellt Morgen-Briefing für den Nutzer.]\nKalendercheck für Donne"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:30",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:31",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Donnerstag, 19. März - alle Termine des Tages auflisten"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:31",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: User möchte vollständiges Morgen-Briefing mit Terminen und Prioritäten"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "[Kontext: User möchte vollständiges Morgen-Briefing mit Terminen, Wetter und Pri"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "[Kontext: User möchte Morgen-Briefing mit Terminen, Wetter und Prioritäten. Bitt"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:43",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:51",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "21:52",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:05",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:05",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:05",
+      "agent": "SYSTEM",
+      "typ": "navigation",
+      "aktion": "Channel gewechselt zu #energie"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:05",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "zeige den aktuell energiereport"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:06",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "wie komme ich ab 23:00 Uhr zum Hauptbahnhof?"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:06",
+      "agent": "SYSTEM",
+      "typ": "navigation",
+      "aktion": "Channel gewechselt zu #fitness"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:06",
+      "agent": "SYSTEM",
+      "typ": "navigation",
+      "aktion": "Channel gewechselt zu #leben"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:07",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wie komme ich ab 23:00 Uhr zum Hauptbahnhof?"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:12",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:12",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:15",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-19",
+      "zeit": "22:15",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:18",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Hallo OTTO, Testverbindung von innovooClaw"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:32",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:32",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:33",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wievile MaiLS liegen im MAILEINGANG ?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:37",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Wieviele Mails liegen im Posteingang?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:38",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:38",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:39",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Zeige die neueste Mail aus dem MAileingang"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:39",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Wieviel Strom wird aktuell verbraucht?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:40",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "die ADRESSE LAUTET : 192.168.0.120"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:50",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Vera, dein Status?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:50",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Bitte aktuelle Energie-Messdaten von Shelly Pro 3EM abrufen – Stromverbrauch, PV"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:50",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "ich brauche die aktuellen Energie Daten"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:50",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "192.168.0.120"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:51",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:51",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:51",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wieviel energie verbrauche ich gerade?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:52",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wieviel energie verbrauche ich gerade?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "09:53",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige meine aktuelle Mail aus dem Mail Eingang"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "10:01",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Wie hoch ist der aktuelle Energieverbrauch? Zeige mir die Live-Messdaten vom She"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "10:01",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Wie viel Energie verbrauche ich gerade?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:37",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:37",
+      "agent": "SYSTEM",
+      "typ": "navigation",
+      "aktion": "Channel gewechselt zu #react"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:37",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:39",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für heute Freitag, 20. März: Nächste 3-5 Termine mit Uhrzeiten und"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:39",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für heute Freitag, 20. März: Nächste 3-5 Termine, Uhrzeiten, Orte."
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:39",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Freitag, 20. März. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:40",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Benutzer möchte einen Überblick über alle Termine am 20. März mit Deta"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:40",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Freitag, 20. März: Bitte alle Termine des heutigen Tages aufli"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:40",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Freitag, 20. März. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:47",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "11:47",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "12:59",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:00",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:00",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "was steht morgen in meinem Kalender?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:01",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wieviel Strom wird aktuell verbraucht?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:02",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:02",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:03",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Was steht für morgen in meinem KAlender?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:03",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:03",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:12",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:13",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:13",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Was steht für morgen in meinem KALENDER?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wie stelle idh die verbindung zum GooglAccout her? Ein HTTP-"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:17",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "nein, da gibt es eine Aufruf für die Erlaubnis aug den Googl"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:18",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:18",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:25",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:25",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:37",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:37",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für heute, Freitag 20. März: Bitte nächste 5 Termine + Zeiten + Or"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:37",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:37",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:38",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "was steht für morgen in meinem Kalender?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:38",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "in welchem kalender schaust Du?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:39",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "schu nochmal"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:40",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "kannst Du mit Telegram kommunizieren?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:40",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wieviel energie wird gerade verbraucht?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:47",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "13:48",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:04",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:05",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:12",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:36",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:37",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:39",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:39",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:40",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:40",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:44",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Hallo OTTO"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:52",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:52",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:53",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Kurzer Test"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "14:53",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Vera, dein Status"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:01",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Hallo Otto"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:01",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Otto, dein Status?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:01",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Otto, nenne deinen Status"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:01",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Ich brauche den Status von Vera"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:02",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Wie viel Energie wird gerade verbraucht? Zeige aktuelle Verbrauchsdaten."
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:02",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Wie viel Energie wird gerade verbraucht?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:04",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Shellyen, dein Status"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:06",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Otto, dein Status?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:08",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Vera, dein Status"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:15",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Nutzer fragt nach aktuellem Kontostand]\nBitte den aktuellen Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:15",
+      "agent": "MINA",
+      "typ": "user-msg",
+      "aktion": "Wie ist der aktuelle Kontostand?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:16",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:16",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "wi3e lautet der aktuelle Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:19",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "mina, wie ist der Kontostand?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:26",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "MIna, mein Kontostand?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:29",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Mina, mein Kontostand?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:30",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:31",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:31",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Mina, mein Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:31",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Mina, mein Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:34",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:34",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:34",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "MINA, mein Kontostand?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:34",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Mina , mein Kontostand?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:38",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:38",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:38",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "mina. mein Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:40",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:40",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "15:41",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "mina, Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:15",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:15",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:16",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Liste das GooglDrive Verzeichnis"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Zeige meinen Kalender für Morgen"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Zeige die neueeste Mail aus meinem Maileingang"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:19",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Lies meine Mails"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:19",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "mina, Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:22",
+      "agent": "MINA",
+      "typ": "user-msg",
+      "aktion": "Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:27",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:27",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:28",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "mina, Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:29",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige meinen Kalender für morgen"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:30",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:31",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Mina, Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:31",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:32",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "otto, wieviel energie wird gerade verbraucht"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:33",
+      "agent": "MINA",
+      "typ": "user-msg",
+      "aktion": "Kontostand"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:36",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Zeige aktuelle Energieverbrauchsdaten und Messwerte (Leistung, Spannung, Strom, "
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:36",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Energieverbrauch"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "19:55",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Abendroutine: Tagesertrag ermitteln und an MINA übergeben zum Speichern"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "20:22",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "20:22",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "20:22",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "was läuft?"
+    },
+    {
+      "datum": "2026-03-20",
+      "zeit": "20:23",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "was läuft?"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "10:37",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "10:38",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "10:59",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "baue in den Morgenbericht auch den aktuellen Energieverbrauc"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "10:59",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "ab jetzt den Bericht immer so darstellen"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:03",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:03",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:04",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "füge zukünftig den aktuellen Energieverbrauch in den Morgenb"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:05",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige nur den aktuellen Verbrauch an"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:05",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "baue das in den Morgenbericht eoin"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:08",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "was steht für heute im Kalender?"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:08",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige den Morgenbericht"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:12",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "habe ich neue E-Mails im Maileingang?"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "11:14",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "könntest du es einrichten, direkt automatisch auf  Mails zu "
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "21:06",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Sonntag, 22. März. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "21:06",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Sonntag, 22. März. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "21:23",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Sonntag, 22. März. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "21:26",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Wieveil energie vwird gerade verbraucht?"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "21:34",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Sonntag, 22. März. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "21:35",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Zeige den aktuellen Energieverbrauch"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:11",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Der Nutzer möchte einen Überblick über seine Termine für einen spezifi"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:11",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Dienstag, 24. März – welche Termine stehen an? Format: Zeit + "
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:11",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Dienstag, 24. März. Nenne (1) die nächs"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:12",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Aktueller Energieverbrauch jetzt: Leistung in Watt, Bezug/Einspeisung, Gesamtver"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:12",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "ermittle den aktuellen energieverbrauch"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:21",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "list den inhalt aus dem GoogleDrive im Ordner \"Mina\""
+    }
+  ]
+}

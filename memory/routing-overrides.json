@@ -1,0 +1,13 @@
+{
+  "_info": "Routing-Overrides – live editierbar ohne Proxy-Neustart",
+  "overrides": [
+    { "priority": 0, "pattern": "photovoltaik|pv.anlage|einspeisung heute|watt heute", "agent": "shellyem", "reason": "PV-Live → SHELLYEM" },
+    { "priority": 1, "pattern": "schwimm|freibad|hallenbad|schwimmbad",                 "agent": "vera",     "reason": "Schwimmen → VERA" },
+    { "priority": 2, "pattern": "wetter|temperatur|regen|vorhersage|sonnenschein|grad",  "agent": "vera",     "reason": "Wetter → VERA" },
+    { "priority": 3, "pattern": "shelly|pv|solar|einspeisung|watt|kwh|wallbox",          "agent": "shellyem", "reason": "Energie → SHELLYEM" },
+    { "priority": 4, "pattern": "vertrag|nda|dsgvo|kündigung|impressum|abmahnung",       "agent": "leo",      "reason": "Recht → LEO" },
+    { "priority": 5, "pattern": "code|bugfix|refactor|npm|deploy|javascript|python",     "agent": "cleo",     "reason": "Entwicklung → CLEO" }
+  ],
+  "defaultAgent": "otto",
+  "_updatedAt": "2026-03-19T00:00:00.000Z"
+}

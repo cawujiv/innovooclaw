@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "innovooClaw (production)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["proxy.js"],
+      "port": 3000
+    },
+    {
+      "name": "innovooClaw (dev / watch)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--watch", "proxy.js"],
+      "port": 3000
+    },
+    {
+      "name": "innovooClaw HTTPS",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["proxy.js"],
+      "port": 3443
+    }
+  ]
+}

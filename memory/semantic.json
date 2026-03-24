@@ -1,0 +1,48 @@
+{
+  "wetter": {
+    "aktuell": "10°C, Sonnig",
+    "niederschlag": "0 mm",
+    "woche": "2026-03-07: 18°C/5°C, Teils bewölkt | 2026-03-08: 17°C/5°C, Teils bewölkt",
+    "_geaendert": "2026-03-19T20:43:02.445Z"
+  },
+  "kalender": {
+    "naechste_termine": "",
+    "gesamt": "0 Termine"
+  },
+  "finanzen": {
+    "kontostand": "0 EUR",
+    "transaktionen": 0,
+    "top_kategorien": ""
+  },
+  "drive": {
+    "verbunden": "ja",
+    "konto": "innovo.drive@gmail.com",
+    "nutzername": "Manfred",
+    "stammordner": "My Drive (root)",
+    "upload_ziel": "innovooClaw",
+    "hinweis": "driveList() ohne Parameter zeigt My Drive root.",
+    "_geaendert": "2026-03-19T20:43:02.539Z",
+    "nutzer": ""
+  },
+  "vvs": {
+    "haltestelle": "Stuttgart, Libanonstraße",
+    "abfahrten": "",
+    "aktualisiert": ""
+  },
+  "mina": {
+    "deficit_trend": "2 Monate: –255 € Rücklagenabbau",
+    "kontostand_aktuell": "–114,90 € (Überziehung Stand 2026-03-13)",
+    "sprossenwand_anfrage": "1000€ – NICHT LEISTBAR, aktuelles Defizit 114,90€"
+  },
+  "nutzer": {
+    "name": "Manfred",
+    "wohnort": "Stuttgart",
+    "email": "innovo.drive@gmail.com",
+    "google_konto": "innovo.drive@gmail.com",
+    "gmail_otto": "innovo.drive@gmail.com",
+    "vvs_startadresse": "Libanonstraße, Stuttgart"
+  },
+  "energie": {
+    "energie_zaehler_einspeisung_wh": "0"
+  }
+}

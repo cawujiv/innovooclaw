@@ -1,0 +1,137 @@
+{
+  "eintraege": [
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:13",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:13",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:14",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:14",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:14",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:14",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "genauere Energiemeldung im Bericht zukünftig"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:15",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige den aktuellen Energieverbrauch"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "die IP-Adresse lautet: 192.166.0.120"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:16",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "die Adresse lautet: 192.168.0.120"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:17",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "was ist CLEO?"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:17",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "ja"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:18",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige den aktuellen Energieverbrauch"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:25",
+      "agent": "SYSTEM",
+      "typ": "navigation",
+      "aktion": "Channel gewechselt zu #energie"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:25",
+      "agent": "SHELLYEM",
+      "typ": "user-msg",
+      "aktion": "Ruf http://localhost:3000/api/shelly/status ab und zeige mir"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:31",
+      "agent": "SYSTEM",
+      "typ": "navigation",
+      "aktion": "Channel gewechselt zu #leben"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:31",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige den aktuellen Energieverbrauch"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:31",
+      "agent": "SYSTEM",
+      "typ": "session",
+      "aktion": "Session gestartet"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:31",
+      "agent": "OTTO",
+      "typ": "briefing",
+      "aktion": "Morgen-Briefing erstellt"
+    },
+    {
+      "datum": "2026-03-22",
+      "zeit": "20:31",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "zeige den aktuellen Energieverbrauch"
+    }
+  ]
+}

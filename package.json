@@ -1,0 +1,23 @@
+{
+  "name": "innovooclaw",
+  "version": "2.0.0",
+  "description": "innovooClaw – Lokaler Multi-Agent KI-Proxy",
+  "main": "proxy.js",
+  "type": "commonjs",
+  "scripts": {
+    "start":        "node proxy.js",
+    "dev":          "node --watch proxy.js",
+    "index:drive":  "node -e \"require('./modules/drive-indexer').run()\"",
+    "index:memory": "node -e \"require('./modules/memory-indexer').run()\""
+  },
+  "dependencies": {
+    "@lancedb/lancedb":     "^0.26.2",
+    "@xenova/transformers": "^2.17.2",
+    "dotenv":               "^16.4.5",
+    "pdf-parse":            "^2.4.5",
+    "selfsigned":           "^2.4.1"
+  },
+  "keywords": ["ai", "agent", "proxy", "ollama", "claude"],
+  "author": "Manfred",
+  "license": "ISC"
+}
