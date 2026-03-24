@@ -3,20 +3,6 @@
     {
       "datum": "2026-03-19",
       "zeit": "21:27",
-      "agent": "SYSTEM",
-      "typ": "session",
-      "aktion": "Session gestartet"
-    },
-    {
-      "datum": "2026-03-19",
-      "zeit": "21:27",
-      "agent": "OTTO",
-      "typ": "user-msg",
-      "aktion": "Kalendercheck für heute, Donnerstag 19. März. Welche Termine stehen an?"
-    },
-    {
-      "datum": "2026-03-19",
-      "zeit": "21:27",
       "agent": "VERA",
       "typ": "user-msg",
       "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 19. März. Nenne Termine, We"
@@ -1357,6 +1343,62 @@
       "agent": "OTTO",
       "typ": "user-msg",
       "aktion": "list den inhalt aus dem GoogleDrive im Ordner \"Mina\""
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck: Zeige die nächsten 5 Termine für Dienstag, 24. März. Format: Uhrz"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Morgen-Briefing für den Nutzer. Bitte relevante Termine und Zeiten zur"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "CLEO",
+      "typ": "user-msg",
+      "aktion": "Zeige mir den aktuellen Git-Status des Repositories."
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "CLEO, zeige mir den aktuellen Git-Status"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Dienstag, 24. März. Nenne (1) die nächs"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "CLEO",
+      "typ": "user-msg",
+      "aktion": "Zeige mir den aktuellen Git-Status des Projekts."
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:47",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "CLEO, zeige mir den aktuellen Git-Status"
+    },
+    {
+      "datum": "2026-03-24",
+      "zeit": "18:49",
+      "agent": "CLEO",
+      "typ": "user-msg",
+      "aktion": "#gitstatus"
     }
   ]
 }

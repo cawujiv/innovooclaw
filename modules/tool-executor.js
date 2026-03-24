@@ -216,6 +216,66 @@ async function executeTool(toolName, toolInput, agentKey) {
       }
 
       // ── Shelly ───────────────────────────────────────────────────────────
+      case 'gitStatus': {
+        const { execSync } = require('child_process');
+        try {
+          const out = execSync('git status --short', { cwd: '/opt/innovooclaw' }).toString();
+          return out.trim() || 'Keine Änderungen.';
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitDiff': {
+        const { execSync } = require('child_process');
+        try {
+          const datei = toolInput.datei || '';
+          const out = execSync('git diff ' + datei, { cwd: '/opt/innovooclaw' }).toString();
+          return out.slice(0, 4000) || 'Keine Änderungen.';
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitAdd': {
+        const { execSync } = require('child_process');
+        try {
+          const datei = toolInput.datei || '.';
+          execSync('git add ' + datei, { cwd: '/opt/innovooclaw' });
+          return 'Staged: ' + datei;
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitCommit': {
+        const { execSync } = require('child_process');
+        try {
+          const msg = toolInput.nachricht.replace(/'/g, '"');
+          const out = execSync('sudo -u innovooclaw git commit -m "' + msg + '"', { cwd: '/opt/innovooclaw' }).toString();
+          return out.trim();
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitPush': {
+        const { execSync } = require('child_process');
+        try {
+          const out = execSync('sudo -u innovooclaw git push', { cwd: '/opt/innovooclaw' }).toString();
+          return out.trim() || 'Push erfolgreich.';
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitCheckout': {
+        const { execSync } = require('child_process');
+        try {
+          const datei = toolInput.datei || '.';
+          execSync('git checkout -- ' + datei, { cwd: '/opt/innovooclaw' });
+          return 'Zurückgesetzt: ' + datei;
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitRevert': {
+        const { execSync } = require('child_process');
+        try {
+          const out = execSync('git revert HEAD --no-edit', { cwd: '/opt/innovooclaw' }).toString();
+          return out.trim();
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
+      case 'gitLog': {
+        const { execSync } = require('child_process');
+        try {
+          const out = execSync('git log --oneline -10', { cwd: '/opt/innovooclaw' }).toString();
+          return out.trim();
+        } catch(e) { return 'Git-Fehler: ' + e.message; }
+      }
       case 'shellyStatus':   { const r = await fetchInternal('/api/shelly/status');  if (r.error) return `Shelly Fehler: ${r.error}`; return JSON.stringify(r, null, 2); }
       case 'shellyPower':    { const r = await fetchInternal('/api/shelly/power');   if (r.error) return `Shelly Power Fehler: ${r.error}`; return JSON.stringify(r, null, 2); }
       case 'shellyHistory':  { const r = await fetchInternal('/api/shelly/history', 12000); if (r.error) return `Shelly History Fehler: ${r.error}`; return JSON.stringify(r, null, 2).slice(0, 4000); }

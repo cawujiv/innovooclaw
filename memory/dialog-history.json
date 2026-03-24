@@ -1973,6 +1973,78 @@
       "user": "list den inhalt aus dem GoogleDrive im Ordner \"Mina\"",
       "reply": "**📁 Ordner \"Mina\" – Inhaltsübersicht:**\n\n| Datei | Datum | Typ |\n|-------|-------|-----|\n| **Februar2026.csv** | 11.03.2026 | Finanzmonat Feb |\n| **Maerz2026** (2x) | 20.03.2026 | März-Daten |\n| **Maerz2026.csv** | 20.03.2026 | März-Tabelle |\n| **MINA_Agent_Status_2026-02-21.txt** | 11.03.2026 | Agent-Status |\n| **MINA_Budget_Analyse_2026-02-21.txt** | 11.03.2026 | Budget-Analyse |\n| **MINA_Finanzstatus_2026-02-21.txt** (2x) | 11.03.2026 | Finanzstatus |\n\n**Zusammenfassung:** 8 Dateien, hauptsächlich **Finanzübersichten** (Februar/März 2026) und **MINA-Reports**. Die neuesten Daten sind vom 20.03.2026.\n\nWillst du eine dieser Dateien öffnen? Z.B. die aktuelle **Maerz2026.csv** oder die **Budget-Analyse**?",
       "ts": "2026-03-24T17:21:10.635Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Kalendercheck: Zeige die nächsten 5 Termine für Dienstag, 24. März. Format: Uhrzeit | Titel | Ort/Notiz",
+      "reply": "Ich check dir gleich die Kalendereinträge. Moment...Für Dienstag, 24. März habe ich aktuell **keine Termine** im Kalender eingetragen. \n\nMöchtest du einen neuen Termin hinzufügen oder sollte ich nächste Woche/einen anderen Zeitraum checken?",
+      "ts": "2026-03-24T17:47:02.048Z"
+    },
+    {
+      "agent": "leo",
+      "user": "[Kontext: Morgen-Briefing für den Nutzer. Bitte relevante Termine und Zeiten zurückgeben.]\nKalendercheck für Dienstag, 24. März – zeige nächste 5 Termine des Tages",
+      "reply": "⚠️ **LIMITATION – Kalenderintegration nicht verfügbar**\n\nIch habe keinen direkten Zugriff auf deinen Kalender. Meine Fähigkeiten beschränken sich auf:\n- 📁 **Google Drive** (Dateien lesen/suchen in innovooClaw/Recht)\n- 📋 **GEDÄCHTNIS-Block** (gespeicherte Fakten abrufen)\n- 🔄 **Delegation** an Spezialisten (OTTO, MINA, VERA, SAM, CLEO, SHELLYEM)\n\n**Abhilfe:**\n1. **@OTTO fragen** – der kann auf deinen Google Calendar zugreifen und Termine für 24.03. abrufen\n2. **Manuell**: Termin-Datei in Drive hochladen (z.B. `Termine_24_03.txt`) → ich parse sie\n\nSoll ich **@OTTO** für einen Kalender-Check am **Dienstag, 24.03.** delegieren?**ERGEBNIS:**\n\nDein Kalender zeigt für **Dienstag, 24. März derzeit keine Einträge**. \n\n**Optionen:**\n- 📅 Termine hinzufügen? (→ @OTTO)\n- 📆 Anderen Zeitraum checken?",
+      "ts": "2026-03-24T17:47:04.603Z"
+    },
+    {
+      "agent": "cleo",
+      "user": "Zeige mir den aktuellen Git-Status des Repositories.",
+      "reply": "Ich bedauere, aber ich habe keinen direkten Zugriff auf Git-Funktionen. Meine verfügbaren Tools sind:\n\n- **Google Drive Operationen** (driveList, driveSearch, driveRead, driveUpload)\n- **Semantisches Gedächtnis** (saveFact)\n- **Agent-Delegation** (delegateToAgent)\n\nFür Git-Operationen (gitStatus, gitDiff, gitAdd, gitCommit, gitPush) bräuchte ich Zugriff auf einen speziellen Git-Agent oder -Dienst, den ich derzeit nicht aktiviert habe.\n\n**Mögliche Optionen:**\n\n1. **Manuell prüfen**: Du kannst lokal `git status` ausführen\n2. **Agent-Delegation**: Ich könnte die Anfrage an einen Spezialisten-Agent (z.B. @SAM oder @LEO) delegieren, falls diese Git-Zugriff haben\n3. **Drive-basiert**: Ich könnte die aktuellen Dateien aus dem `innovooClaw`-Ordner auslesen und auf Änderungen prüfen\n\nWas möchtest d",
+      "ts": "2026-03-24T17:47:04.857Z"
+    },
+    {
+      "agent": "otto",
+      "user": "CLEO, zeige mir den aktuellen Git-Status",
+      "reply": "Ich bin OTTO, nicht CLEO. 🤖\n\nCLEO ist unser Spezialist für Code, Git und Deployment. Ich delegiere deine Anfrage an sie:CLEO hat keinen direkten Git-Zugriff aktuell. Deine Optionen:\n\n1. **Lokal ausführen**: `git status` in deinem Terminal\n2. **Drive-Check**: Ich könnte die aktuellen Dateien aus innovooClaw auslesen und auf Änderungen prüfen\n\nWas bevorzugst du?",
+      "ts": "2026-03-24T17:47:06.663Z"
+    },
+    {
+      "agent": "otto",
+      "user": "CLEO, zeige mir den aktuellen Git-Status",
+      "reply": "Ich bin OTTO, nicht CLEO. 🤖\n\nCLEO ist unser Spezialist für Code, Git und Deployment. Ich delegiere deine Anfrage an sie:CLEO hat keinen direkten Git-Zugriff aktuell. Deine Optionen:\n\n1. **Lokal ausführen**: `git status` in deinem Terminal\n2. **Drive-Check**: Ich könnte die aktuellen Dateien aus innovooClaw auslesen und auf Änderungen prüfen\n\nWas bevorzugst du?",
+      "ts": "2026-03-24T17:47:06.695Z"
+    },
+    {
+      "agent": "vera",
+      "user": "Erstelle mein Morgen-Briefing für heute, Dienstag, 24. März. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich erstelle dein Morgen-Briefing! Dazu brauche ich folgende Informationen von dir:\n\n**🗓️ Termine:**\nIch prüfe deinen Kalender – dafür delegiere ich an meinen Kollegen Otto.\n\n**🌡️ Wetter & 💪 Gesundheit:**\nIch hole aktuelle Daten zu Wetter, Schlaf und Aktivität.---\n\n## ☀️ MORGEN-BRIEFING | Dienstag, 24. März\n\n### 📅 **(1) Termine**\nDein Kalender ist für heute leer. \n➜ Möchtest du Termine hinzufügen oder eine andere Datei hochladen, die ich checken soll?\n\n---\n\n### 🌡️ **(2) Wetter**\n**Heute:** 14–17°C, **überwiegend bewölkt**, kein Regen ✓  \n**Tipp:** Ideal für Outdoor-Aktivitäten! Leichte Jacke reicht.\n\n**Mittelfristig:**\n- **Mittwoch 25.3.:** 3–13°C, **Regen erwartet** (6,1 mm) ☔\n- **Donnerstag 26.3.:** 2–8°C, Schauer (2,8 mm)\n\n---\n\n### 💪 **Gesundheit & Aktivität**\n⚠️ **Garmin nicht ko",
+      "ts": "2026-03-24T17:47:10.938Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Erstelle mein Morgen-Briefing für heute, Dienstag, 24. März. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich erstelle dein Morgen-Briefing! Dazu brauche ich folgende Informationen von dir:\n\n**🗓️ Termine:**\nIch prüfe deinen Kalender – dafür delegiere ich an meinen Kollegen Otto.\n\n**🌡️ Wetter & 💪 Gesundheit:**\nIch hole aktuelle Daten zu Wetter, Schlaf und Aktivität.---\n\n## ☀️ MORGEN-BRIEFING | Dienstag, 24. März\n\n### 📅 **(1) Termine**\nDein Kalender ist für heute leer. \n➜ Möchtest du Termine hinzufügen oder eine andere Datei hochladen, die ich checken soll?\n\n---\n\n### 🌡️ **(2) Wetter**\n**Heute:** 14–17°C, **überwiegend bewölkt**, kein Regen ✓  \n**Tipp:** Ideal für Outdoor-Aktivitäten! Leichte Jacke reicht.\n\n**Mittelfristig:**\n- **Mittwoch 25.3.:** 3–13°C, **Regen erwartet** (6,1 mm) ☔\n- **Donnerstag 26.3.:** 2–8°C, Schauer (2,8 mm)\n\n---\n\n### 💪 **Gesundheit & Aktivität**\n⚠️ **Garmin nicht ko",
+      "ts": "2026-03-24T17:47:10.968Z"
+    },
+    {
+      "agent": "cleo",
+      "user": "Zeige mir den aktuellen Git-Status des Projekts.",
+      "reply": "Ich habe keinen direkten Zugriff auf Git-Funktionen in meinem aktuellen Toolset. Meine verfügbaren Tools sind:\n\n- **Drive-Operationen** (lesen, schreiben, suchen)\n- **Semantisches Gedächtnis** (Fakten speichern)\n- **Agent-Delegation** (an Spezialisten weitergeben)\n\nUm den Git-Status zu prüfen, habe ich zwei Optionen:\n\n**Option 1:** Du führst lokal aus:\n```bash\ngit status\ngit log --oneline -5\ngit branch -v\n```\n\n**Option 2:** Ich delegiere an **LEO** (Git-/DevOps-Spezialist):\n```\n@LEO { \"task\": \"Git Status\", \"context\": \"innovooClaw project\", \"priority\": \"normal\" }\n```\n\n**Möchtest du, dass ich LEO mit der Git-Status-Abfrage beauftrage?** Dann kann er dir einen vollständigen Überblick geben über:\n- Aktuelle Branch\n- Uncommitted Changes\n- Unpushed Commits\n- Remote-Status\n\nSag Bescheid! 🚀",
+      "ts": "2026-03-24T17:47:24.862Z"
+    },
+    {
+      "agent": "otto",
+      "user": "CLEO, zeige mir den aktuellen Git-Status",
+      "reply": "Du sprichst CLEO direkt an – ich delegiere deine Anfrage sofort! 🚀CLEO meldet: Sie hat keinen direkten Git-Zugriff, aber zwei Optionen:\n\n1. **Lokal selbst ausführen**: `git status` in deinem Terminal\n2. **LEO beauftragen**: Sie kann Git-Fragen an unseren DevOps-Spezialisten weiterleiten\n\nWas möchtest du tun? 🔧",
+      "ts": "2026-03-24T17:47:26.882Z"
+    },
+    {
+      "agent": "otto",
+      "user": "CLEO, zeige mir den aktuellen Git-Status",
+      "reply": "Du sprichst CLEO direkt an – ich delegiere deine Anfrage sofort! 🚀CLEO meldet: Sie hat keinen direkten Git-Zugriff, aber zwei Optionen:\n\n1. **Lokal selbst ausführen**: `git status` in deinem Terminal\n2. **LEO beauftragen**: Sie kann Git-Fragen an unseren DevOps-Spezialisten weiterleiten\n\nWas möchtest du tun? 🔧",
+      "ts": "2026-03-24T17:47:26.899Z"
+    },
+    {
+      "agent": "cleo",
+      "user": "#gitstatus",
+      "reply": "Ich bin CLEO, eine KI-Entwicklungs-Agentin für Code-Verwaltung in Google Drive. Ich habe leider **keinen direkten Zugriff auf Git-Befehle** wie `gitStatus()`.\n\nMeine verfügbaren Funktionen sind:\n- 📁 **Google Drive**: driveList, driveSearch, driveRead, driveUpload\n- 💾 **Speicher**: saveFact (Gedächtnis)\n- 👥 **Delegation**: delegateToAgent (an Spezialisten)\n\n**Was ich für dich tun kann:**\n\n1. **Google Drive durchsuchen** – Dateien in `innovooClaw` finden und auslesen\n2. **Code-Änderungen verwalten** – Dateien hochladen mit Versionierung\n3. **Tasks delegieren** – An Spezialisten wie @OTTO, @MINA, @LEO weiterleiten\n\n**Wenn du Git brauchst:**\nNutze direkt in deinem Terminal:\n```bash\ngit status\ngit diff\ngit add .\ngit commit -m \"nachricht\"\ngit push\n```\n\n**Was kann ich heute für dich erledigen?",
+      "ts": "2026-03-24T17:49:32.261Z"
+    },
+    {
+      "agent": "cleo",
+      "user": "#gitstatus",
+      "reply": "Ich bin CLEO, eine KI-Entwicklungs-Agentin für Code-Verwaltung in Google Drive. Ich habe leider **keinen direkten Zugriff auf Git-Befehle** wie `gitStatus()`.\n\nMeine verfügbaren Funktionen sind:\n- 📁 **Google Drive**: driveList, driveSearch, driveRead, driveUpload\n- 💾 **Speicher**: saveFact (Gedächtnis)\n- 👥 **Delegation**: delegateToAgent (an Spezialisten)\n\n**Was ich für dich tun kann:**\n\n1. **Google Drive durchsuchen** – Dateien in `innovooClaw` finden und auslesen\n2. **Code-Änderungen verwalten** – Dateien hochladen mit Versionierung\n3. **Tasks delegieren** – An Spezialisten wie @OTTO, @MINA, @LEO weiterleiten\n\n**Wenn du Git brauchst:**\nNutze direkt in deinem Terminal:\n```bash\ngit status\ngit diff\ngit add .\ngit commit -m \"nachricht\"\ngit push\n```\n\n**Was kann ich heute für dich erledigen?",
+      "ts": "2026-03-24T17:49:32.271Z"
     }
   ]
 }
