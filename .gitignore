@@ -6,3 +6,7 @@ logs/
 *.pem
 *.bak
 *.bak-*
+.ssh/
+scripts/
+*.pem
+*.key

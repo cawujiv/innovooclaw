@@ -7,7 +7,8 @@
   },
   "kalender": {
     "naechste_termine": "",
-    "gesamt": "0 Termine"
+    "gesamt": "0 Termine",
+    "heute_25_maerz": "Keine Termine eingetragen"
   },
   "finanzen": {
     "kontostand": "0 EUR",
@@ -43,6 +44,61 @@
     "vvs_startadresse": "Libanonstraße, Stuttgart"
   },
   "energie": {
-    "energie_zaehler_einspeisung_wh": "0"
+    "energie_zaehler_einspeisung_wh": "0",
+    "ertrag_woche_kwh": "55.83",
+    "einspeisung_woche_kwh": "0.87",
+    "wochenertrag_kwh": "57.25 kWh (Netzbezug: 57.25 | Einspeisung: 0.97)",
+    "kw13_netzbezug_kwh": "57.25",
+    "kw13_einspeisung_kwh": "0.97",
+    "kw13_zeitraum": "2026-03-18 bis 2026-03-25",
+    "bericht_kw13_2026": "KW13 (2026-03-18 bis 2026-03-25) | Netzbezug: 57.25 kWh | Einspeisung: 0.97 kWh | Netzabhängigkeit: 59:1 | Analyse: Sehr niedriger PV-Ertrag (März-Überschuss minimal). Pumpe/Lüftung/Wallbox wenig genutzt.",
+    "netzbezug_kw13": "57.25 kWh",
+    "einspeisung_kw13": "0.97 kWh",
+    "netzabhaengigkeit_kw13": "59:1",
+    "pv_ertrag_kw13": "~57 kWh Gesamt (= 57.25 Netzbezug + 0.97 Einspeisung - Eigenverbrauch PV/Speicher)"
+  },
+  "Git-Befehle": {
+    "git-status": "Zeigt den Status des Working Tree: Unterschiede zwischen Index und HEAD, zwischen Working Tree und Index, sowie unverfolgter Dateien. Häufige Optionen: -s (short), -b (branch-Info), --porcelain (Script-Format). Quelle: git-scm.com/docs/git-status"
+  },
+  "Git-Befehl": {
+    "git-status": "Zeigt den Status des Working Tree. Displays Unterschiede zwischen Index und HEAD (zu committen), zwischen Working Tree und Index (könnten mit git add hinzugefügt werden), und unverfolgter Dateien. Wichtige Optionen: -s/--short (Kurzformat), -b/--branch (Branch-Info), --porcelain (Script-Format)"
+  },
+  "github": {
+    "status": "GitHub ist online und funktionstüchtig (2026-03-24 12:35:34 UTC-7)",
+    "incident_teams_notifications": "Teams Github Notifications App ist beeinträchtigt. Ursache: Degraded availability von Azure Teams APIs. Status: Update vom 24. März 2026, 18:50 UTC. Wartet auf Lösung durch Azure."
+  },
+  "git": {
+    "git-status": "git status zeigt den Zustand des Working Tree an. Es zeigt: (1) Unterschiede zwischen Index und HEAD (würde mit `git commit` committed), (2) Unterschiede zwischen Working Tree und Index (könnten mit `git add` staged werden), (3) untracked Dateien. Wichtige Optionen: -s (short format), -b (branch info), --porcelain (script-freundliches Format)."
+  },
+  "services": {
+    "github_status": "Online - GitHub Status Dashboard bestätigt Verfügbarkeit"
+  },
+  "git-Befehl": {
+    "git-status-Ausgabe-Format": "Short-Format (-s) zeigt Dateistatus in Kurzform an. Porcelain-Format (--porcelain) gibt script-freundliche, stabile Ausgabe. Die drei Kategorien in git status: (1) Changes to be committed (Staged), (2) Changes not staged for commit (Modified), (3) Untracked files."
+  },
+  "wochenbericht": {
+    "kw13_2026_netzbezug_kwh": "57.25",
+    "kw13_2026_einspeisung_kwh": "0.97",
+    "kw13_2026_zeitraum": "2026-03-18 bis 2026-03-25",
+    "kw13_2026_analyse": "Sehr niedriger PV-Ertrag (März-Überschuss minimal). Pumpe/Lüftung/Wallbox wenig genutzt. Netzabhängigkeit dominiert.",
+    "kw13_2026_bilanz": "Gesamtnetzbezug: 57.25 kWh | Gesamteinspeisung: 0.97 kWh | Verhältnis: 59:1 (Netzabhängig)"
+  },
+  "energie_wochenbericht": {
+    "kw13_2026_netzbezug": "57.25 kWh",
+    "kw13_2026_einspeisung": "0.97 kWh",
+    "kw13_2026_analyse": "Sehr niedriger PV-Ertrag (März-Überschuss minimal). Pumpe/Lüftung/Wallbox wenig genutzt. Netzabhängigkeit dominiert (59:1 Verhältnis).",
+    "kw13_2026_zeitraum": "2026-03-18 bis 2026-03-25"
+  },
+  "archiv": {
+    "kw13_2026_status": "✓ ARCHIVIERT | Saison: Frühjahr | Wetterlage: Trüb/Bewölkt | Prognose: Ab April Steigerung erwartet"
+  },
+  "planung": {
+    "kw13_2026_lernwert": "März-Schwachstelle erkannt: 59:1 Netzabhängigkeit deutet auf Speicherleere und minimale PV-Überschüsse. Empfehlung: Ausgleich durch Tageslichtnutzung (Mai-Juni) oder Speicheroptimierung."
+  },
+  "sicherheit": {
+    "gitguardian_alert": "OpenSSH Private Key exposed on GitHub - dringend handeln erforderlich, CLEO informieren"
+  },
+  "security": {
+    "ssh_key_exposure_escalation": "CRITICAL: OpenSSH private key exposed in git history (innovooclaw). Commit 5ebb4f8 partial fix only. AWAITING SECURITY CLEARANCE before history rewrite. Need: GitGuardian details, key type/scope, system inventory, rotation timeline. Status: ESCALATION_PENDING_SECURITY_REVIEW"
   }
 }

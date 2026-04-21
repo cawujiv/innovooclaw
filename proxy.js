@@ -1113,7 +1113,7 @@ h2{color:#6ee7b7}.sub{color:#888;font-size:.85rem;margin-top:8px}
           hostname: 'localhost', port: PORT,
           path: '/api/agent/' + agentKey,
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(postBody) }
+          headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(postBody), 'x-api-key': process.env.API_SECRET || '' }
         }, (r) => {
           let d = ''; r.on('data', c => d += c);
           r.on('end', () => { try { resolve(JSON.parse(d)); } catch { reject(new Error('Agent-Antwort parse-Fehler')); } });
