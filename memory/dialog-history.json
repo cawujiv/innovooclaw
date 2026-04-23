@@ -2453,6 +2453,66 @@
       "user": "Erstelle mein Morgen-Briefing für heute, Dienstag, 21. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
       "reply": "Ich erstelle dir ein ganzheitliches Morgen-Briefing. Dafür brauche ich mehrere Datenquellen:**☀️ MORGEN-BRIEFING – Dienstag, 21. April**\n\n---\n\n### (1) **Nächste Termine**\nMein Kalender-Zugriff ist gerade nicht verfügbar. Bitte sag mir deine Top-3 Termine für heute – dann sortiere ich sie nach Priorität und Reisezeit ein.\n\n---\n\n### (2) **Wetter Stuttgart**\n**Aktuell:** 11°C, leicht regnerisch (WMO 80 = Regen mit Unterbrechungen)  \n**Heute:** Max 12°C, Min 5°C, ~1,1mm Regen erwartet  \n💡 **Tipp:** Regenschirm mitnehmen, leichte Jacke reicht aus – angenehmes Frühjahrswetter.\n\n---\n\n### (3) **Deine Top-3 Prioritäten**\nOhne deine Termine und Garmin-Daten (Schlaf, Schritte) kann ich diese noch nicht vollständig personalisieren. Sobald du mir folgende Infos gibst, mache ich konkrete Priorisierunge",
       "ts": "2026-04-21T16:20:11.740Z"
+    },
+    {
+      "agent": "otto",
+      "user": "[Kontext: Morgen-Briefing angefordert. Nutzer benötigt Tagesübersicht.]\nKalendercheck für Donnerstag, 23. April 2025. Bitte nächste 5 Termine mit Uhrzeiten und Ort.",
+      "reply": "Ich hole dir die Termine für diese Woche. Moment...Entschuldigung – die Kalender-Verbindung ist gerade unterbrochen. Ich kann deine Termine für Donnerstag, 23. April nicht abrufen.\n\nDas kann an einer Token-Erneuerung liegen. Bitte versuche es in wenigen Sekunden erneut, oder check deine Termine direkt in Google Calendar (calendar.google.com).\n\nKann ich dir stattdessen deine E-Mails oder Dateien überprüfen?",
+      "ts": "2026-04-23T09:38:07.806Z"
+    },
+    {
+      "agent": "vera",
+      "user": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich erstelle dein Morgen-Briefing! Dazu brauche ich parallele Daten von deinen Terminen und dem Wetter.**☀️ MORGEN-BRIEFING – Donnerstag, 23. April**\n\n---\n\n### (1) **Nächste Termine**\n❌ *Kalenderverbindung momentan unterbrochen.* @OTTO konnte deine Termine nicht abrufen. Bitte check deine Termine direkt unter **calendar.google.com**, oder versuche in wenigen Sekunden erneut zu fragen.\n\n---\n\n### (2) **Wetter heute in Stuttgart**\n✅ **Aktuell:** 13,9°C, sonnig ☀️  \n📊 **Tagesprognose:**  \n- **Max:** 19,2°C  \n- **Min:** 5,1°C  \n- **Regen:** Keiner (0 mm)\n\n→ **Fazit:** Herrlicher Tag! Leichte Jacke für die Morgen- und Abendstunden, sonst perfekt für draußen.\n\n---\n\n### (3) **Top-3 Prioritäten**\nOhne deine Kalender- und Fitnessdaten kann ich noch nicht voll priorisieren, aber hier meine Basis-Emp",
+      "ts": "2026-04-23T09:38:13.173Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich erstelle dein Morgen-Briefing! Dazu brauche ich parallele Daten von deinen Terminen und dem Wetter.**☀️ MORGEN-BRIEFING – Donnerstag, 23. April**\n\n---\n\n### (1) **Nächste Termine**\n❌ *Kalenderverbindung momentan unterbrochen.* @OTTO konnte deine Termine nicht abrufen. Bitte check deine Termine direkt unter **calendar.google.com**, oder versuche in wenigen Sekunden erneut zu fragen.\n\n---\n\n### (2) **Wetter heute in Stuttgart**\n✅ **Aktuell:** 13,9°C, sonnig ☀️  \n📊 **Tagesprognose:**  \n- **Max:** 19,2°C  \n- **Min:** 5,1°C  \n- **Regen:** Keiner (0 mm)\n\n→ **Fazit:** Herrlicher Tag! Leichte Jacke für die Morgen- und Abendstunden, sonst perfekt für draußen.\n\n---\n\n### (3) **Top-3 Prioritäten**\nOhne deine Kalender- und Fitnessdaten kann ich noch nicht voll priorisieren, aber hier meine Basis-Emp",
+      "ts": "2026-04-23T09:38:13.185Z"
+    },
+    {
+      "agent": "otto",
+      "user": "[Kontext: Benutzer möchte Tagesübersicht für heute mit allen anstehenden Terminen und Uhrzeiten, chronologisch geordnet]\nKalendercheck: Welche Termine stehen heute, Donnerstag 23. April, an? Bitte chronologisch mit Uhrzeit auflisten.",
+      "reply": "Leider kann ich gerade nicht auf deinen Kalender zugreifen – der Token-Refresh ist fehlgeschlagen. Das ist ein technisches Problem auf meiner Seite. \n\nVersuchen wir es in ein paar Augenblicken erneut, oder du schaust direkt in Google Calendar nach. Kann ich dir sonst noch helfen?",
+      "ts": "2026-04-23T09:46:08.016Z"
+    },
+    {
+      "agent": "leo",
+      "user": "Kalendercheck für heute, Donnerstag 23. April: Welche Termine stehen an? Bitte chronologisch geordnet mit Uhrzeit.",
+      "reply": "🕐 **Kalendercheck für Donnerstag, 23. April**\n\nIch habe leider keinen direkten Zugriff auf Kalender-Systeme (Google Calendar, Outlook etc.). Meine Funktion ist auf Rechtsdokumente und Drive-Verwaltung spezialisiert.\n\n**Für Terminabfragen bin ich an @OTTO delegiert:**❌ **Technisches Problem:** OTTO kann gerade nicht auf deinen Kalender zugreifen (Token-Fehler).\n\n**Lösungsoptionen:**\n1. **Direkt nachschauen:** Google Calendar / Outlook öffnen\n2. **Später erneut versuchen:** In ~5 Min erneut anfragen\n3. **Bei dir:** Falls du wichtige Termine kennst, kann ich dir bei rechtlichen Fristen helfen (z.B. Kündigungsfristen, Abmahnungsfristen prüfen)\n\nKann ich dir mit etwas anderem helfen – z.B. eine Rechtfrist überprüfen? 📋",
+      "ts": "2026-04-23T09:46:10.899Z"
+    },
+    {
+      "agent": "vera",
+      "user": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich erstelle dir dein Morgen-Briefing für heute! Lass mich die wichtigsten Infos sammeln.Hier ist dein **Morgen-Briefing für Donnerstag, 23. April**:\n\n---\n\n### 📋 (1) Nächste Termine\nLeider kann ich gerade nicht auf deinen Kalender zugreifen (technisches Problem mit OTTO). **Bitte schau schnell selbst nach** in Google Calendar oder Outlook – ich kann dich gerne vorbereiten, wenn du mir die wichtigsten Termine nennst!\n\n---\n\n### 🌤️ (2) Wetter heute\n**Stuttgart, 23. April:**\n- 🌞 **Aktuell:** 14,5°C, klarer Himmel\n- **Hochs/Tiefs:** 19,2°C / 5,1°C\n- 💧 **Regen:** Nein – trockener Tag\n- **Fazit:** Perfekt für Aktivitäten draußen! Leichte Jacke reicht.\n\n---\n\n### 🎯 (3) Top-3 Prioritäten für heute\n\n1. **Termine sichten** → Kalendercheck machen & zeitliche Puffer einplanen\n2. **Bewegung nutzen**",
+      "ts": "2026-04-23T09:46:17.398Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich erstelle dir dein Morgen-Briefing für heute! Lass mich die wichtigsten Infos sammeln.Hier ist dein **Morgen-Briefing für Donnerstag, 23. April**:\n\n---\n\n### 📋 (1) Nächste Termine\nLeider kann ich gerade nicht auf deinen Kalender zugreifen (technisches Problem mit OTTO). **Bitte schau schnell selbst nach** in Google Calendar oder Outlook – ich kann dich gerne vorbereiten, wenn du mir die wichtigsten Termine nennst!\n\n---\n\n### 🌤️ (2) Wetter heute\n**Stuttgart, 23. April:**\n- 🌞 **Aktuell:** 14,5°C, klarer Himmel\n- **Hochs/Tiefs:** 19,2°C / 5,1°C\n- 💧 **Regen:** Nein – trockener Tag\n- **Fazit:** Perfekt für Aktivitäten draußen! Leichte Jacke reicht.\n\n---\n\n### 🎯 (3) Top-3 Prioritäten für heute\n\n1. **Termine sichten** → Kalendercheck machen & zeitliche Puffer einplanen\n2. **Bewegung nutzen**",
+      "ts": "2026-04-23T09:46:17.423Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Kalendercheck für heute, Donnerstag 23. April: Welche sind die nächsten 3-5 Termine des Nutzers heute?",
+      "reply": "Ich schaue dir die Termine für heute an.Entschuldigung, der Kalender-Token ist abgelaufen. Das ist ein technisches Problem, das ich gerade nicht beheben kann. Bitte versuche es in einer Minute erneut oder prüfe manuell deinen Google Calendar für heute, Donnerstag, 23. April.",
+      "ts": "2026-04-23T09:52:35.958Z"
+    },
+    {
+      "agent": "vera",
+      "user": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich hole mir dein Morgen-Briefing! Dafür brauche ich deine Termine und das Wetter für heute.## 📋 Dein Morgen-Briefing – Donnerstag, 23. April\n\n### (1) 📅 Nächste Termine\n⚠️ **Kalender-Sync ist aktuell offline.** Bitte prüfe deinen Google Calendar direkt für die heutigen Termine.\n\n---\n\n### (2) 🌤️ Wetter für heute\n- **Aktuell:** 14,5 °C, sonnig ☀️\n- **Heute:** Min. 5 °C | Max. 19 °C\n- **Niederschlag:** 0 mm – kein Regen erwartet ✅\n- **Empfehlung:** Leichte Jacke für den Morgen, mittags wird's angenehm!\n\n---\n\n### (3) 🎯 Meine Top-3 Prioritäten für dich\n1. **Kalender synchronisieren** – Deine Termine abrufen (aktuell nicht verfügbar)\n2. **Bewegung starten** – Das Wetter ist perfekt zum Rausgehen! ☀️\n3. **Hydration & Fokus** – Guter Tag für konzentriertes Arbeiten (keine Wetterbeeinträchtigun",
+      "ts": "2026-04-23T09:52:41.211Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich hole mir dein Morgen-Briefing! Dafür brauche ich deine Termine und das Wetter für heute.## 📋 Dein Morgen-Briefing – Donnerstag, 23. April\n\n### (1) 📅 Nächste Termine\n⚠️ **Kalender-Sync ist aktuell offline.** Bitte prüfe deinen Google Calendar direkt für die heutigen Termine.\n\n---\n\n### (2) 🌤️ Wetter für heute\n- **Aktuell:** 14,5 °C, sonnig ☀️\n- **Heute:** Min. 5 °C | Max. 19 °C\n- **Niederschlag:** 0 mm – kein Regen erwartet ✅\n- **Empfehlung:** Leichte Jacke für den Morgen, mittags wird's angenehm!\n\n---\n\n### (3) 🎯 Meine Top-3 Prioritäten für dich\n1. **Kalender synchronisieren** – Deine Termine abrufen (aktuell nicht verfügbar)\n2. **Bewegung starten** – Das Wetter ist perfekt zum Rausgehen! ☀️\n3. **Hydration & Fokus** – Guter Tag für konzentriertes Arbeiten (keine Wetterbeeinträchtigun",
+      "ts": "2026-04-23T09:52:41.254Z"
     }
   ]
 }
