@@ -2,76 +2,6 @@
   "eintraege": [
     {
       "datum": "2026-03-20",
-      "zeit": "11:40",
-      "agent": "LEO",
-      "typ": "user-msg",
-      "aktion": "Kalendercheck für Freitag, 20. März: Bitte alle Termine des heutigen Tages aufli"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "11:40",
-      "agent": "VERA",
-      "typ": "user-msg",
-      "aktion": "Erstelle mein Morgen-Briefing für heute, Freitag, 20. März. Nenne (1) die nächst"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "11:47",
-      "agent": "SYSTEM",
-      "typ": "session",
-      "aktion": "Session gestartet"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "11:47",
-      "agent": "OTTO",
-      "typ": "briefing",
-      "aktion": "Morgen-Briefing erstellt"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "12:59",
-      "agent": "SYSTEM",
-      "typ": "session",
-      "aktion": "Session gestartet"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "13:00",
-      "agent": "OTTO",
-      "typ": "briefing",
-      "aktion": "Morgen-Briefing erstellt"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "13:00",
-      "agent": "OTTO",
-      "typ": "user-msg",
-      "aktion": "was steht morgen in meinem Kalender?"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "13:01",
-      "agent": "OTTO",
-      "typ": "user-msg",
-      "aktion": "wieviel Strom wird aktuell verbraucht?"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "13:02",
-      "agent": "SYSTEM",
-      "typ": "session",
-      "aktion": "Session gestartet"
-    },
-    {
-      "datum": "2026-03-20",
-      "zeit": "13:02",
-      "agent": "OTTO",
-      "typ": "briefing",
-      "aktion": "Morgen-Briefing erstellt"
-    },
-    {
-      "datum": "2026-03-20",
       "zeit": "13:03",
       "agent": "OTTO",
       "typ": "user-msg",
@@ -1399,6 +1329,76 @@
       "agent": "VERA",
       "typ": "user-msg",
       "aktion": "Erstelle mein Morgen-Briefing für heute, Donnerstag, 23. April. Nenne (1) die nä"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:52",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Benutzer benötigt Tagesübersicht für 05.05. – keine rechtliche Frage.]"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:52",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Dienstag, 05. Mai: Nächste 3-5 Termine des Tages (mit Uhrzeit "
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:52",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Dienstag, 05. Mai. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:55",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: LEO (Rechts-Agent) fragt Termine für Planung an. Zielformat: Datum | U"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:55",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Dienstag, 05. Mai 2025. Nächste 3-5 anstehende Termine bitte."
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:55",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Dienstag, 05. Mai. Nenne (1) die nächst"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:55",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "Otto - dein status?"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:59",
+      "agent": "OTTO",
+      "typ": "user-msg",
+      "aktion": "[Kontext: Benutzer möchte Tagesübersicht für 05.05.2025]\nKalendercheck für Diens"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:59",
+      "agent": "LEO",
+      "typ": "user-msg",
+      "aktion": "Kalendercheck für Dienstag, 05. Mai 2025: Bitte alle Termine des Tages auflisten"
+    },
+    {
+      "datum": "2026-05-05",
+      "zeit": "19:59",
+      "agent": "VERA",
+      "typ": "user-msg",
+      "aktion": "Erstelle mein Morgen-Briefing für heute, Dienstag, 05. Mai. Nenne (1) die nächst"
     }
   ]
 }
