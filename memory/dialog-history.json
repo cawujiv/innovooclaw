@@ -2591,6 +2591,42 @@
       "user": "Erstelle mein Morgen-Briefing für heute, Dienstag, 05. Mai. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
       "reply": "Ich hole dir jetzt dein Morgen-Briefing. Dafür brauche ich deine Termine und das aktuelle Wetter.**☀️ MORGEN-BRIEFING – Dienstag, 05. Mai**\n\n---\n\n### **(1) Nächste Termine**\n🚨 **Kalender-Zugriff aktuell nicht verfügbar** – Google Calendar Token muss aktualisiert werden. Ich bin in Kontakt mit @OTTO, um das zu beheben. Sobald es wieder läuft, zeige ich dir alle Termine des Tages.\n\n---\n\n### **(2) Wetter für heute**\n📍 **Stuttgart-Bereich**\n- **Aktuell:** 16°C, bedeckt/leicht bewölkt\n- **Heute:** 13–20°C  \n- **Regen:** ~7,6 mm erwartet (leicht/mittelmäßig)\n- **Empfehlung:** Leichte Jacke mitnehmen, Schirm könnte hilfreich sein\n\n---\n\n### **(3) Top-3 Prioritäten für heute**\n\n1. **📅 Kalender-Verbindung beheben** – Brauche deine Termine, um dir den Tag richtig zu planen\n\n2. **🏃 Aktivitätsziel ",
       "ts": "2026-05-05T17:59:24.077Z"
+    },
+    {
+      "agent": "otto",
+      "user": "[Kontext: Morgen-Briefing für VERA-Benutzer. Benötigt: aktuelle Termine, Startzeiten, Location/Format (online/vor Ort).]\nKalendercheck für Montag, 11. Mai: Zeige die nächsten 3-5 Termine des Tages mit Uhrzeit und Dauer.",
+      "reply": "Ich lese dir die Termine für Montag ein. Moment...Leider kann ich gerade nicht auf deinen Kalender zugreifen – die Verbindung ist unterbrochen. Das ist ein technisches Problem auf meiner Seite.\n\nDu kannst aber direkt in Google Calendar schauen und mir die Termine mitteilen – dann bereite ich dir ein detailliertes Briefing für Montag vor!",
+      "ts": "2026-05-11T14:05:57.875Z"
+    },
+    {
+      "agent": "vera",
+      "user": "Erstelle mein Morgen-Briefing für heute, Montag, 11. Mai. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich hole dir die wichtigsten Daten für dein Morgen-Briefing. Gib mir einen Moment!---\n\n## 📋 **Dein Morgen-Briefing – Montag, 11. Mai**\n\n### **🔴 Problem:** Kalender nicht erreichbar\nOtto kann gerade nicht auf deine Google Calendar zugreifen. Bitte teile mir deine **nächsten 3 Termine** mit (Zeit + Titel), dann erstelle ich dir ein komplettes Briefing!\n\n---\n\n### **☀️ Wetter heute (Stuttgart)**\n- **Aktuell:** 15,6°C, Gewitter (Niederschlag ~7 mm erwartet)\n- **Max/Min:** 17°C / 7,5°C\n- **Tipp:** Regenschirm mitnehmen! 🌧️\n\n### **📊 Aktivität**\nGarmin-Verbindung nicht konfiguriert – deine Schritt- und Schlafdaten sind nicht verfügbar.\n\n---\n\n**Wie kann ich helfen?**\n1. Nenne mir deine **Termine für heute** \n2. Dann baue ich dir die **Top-3-Prioritäten** aufbauend auf Wetter + Kalender zusammen",
+      "ts": "2026-05-11T14:06:02.466Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Erstelle mein Morgen-Briefing für heute, Montag, 11. Mai. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich hole dir die wichtigsten Daten für dein Morgen-Briefing. Gib mir einen Moment!---\n\n## 📋 **Dein Morgen-Briefing – Montag, 11. Mai**\n\n### **🔴 Problem:** Kalender nicht erreichbar\nOtto kann gerade nicht auf deine Google Calendar zugreifen. Bitte teile mir deine **nächsten 3 Termine** mit (Zeit + Titel), dann erstelle ich dir ein komplettes Briefing!\n\n---\n\n### **☀️ Wetter heute (Stuttgart)**\n- **Aktuell:** 15,6°C, Gewitter (Niederschlag ~7 mm erwartet)\n- **Max/Min:** 17°C / 7,5°C\n- **Tipp:** Regenschirm mitnehmen! 🌧️\n\n### **📊 Aktivität**\nGarmin-Verbindung nicht konfiguriert – deine Schritt- und Schlafdaten sind nicht verfügbar.\n\n---\n\n**Wie kann ich helfen?**\n1. Nenne mir deine **Termine für heute** \n2. Dann baue ich dir die **Top-3-Prioritäten** aufbauend auf Wetter + Kalender zusammen",
+      "ts": "2026-05-11T14:06:02.556Z"
+    },
+    {
+      "agent": "otto",
+      "user": "[Kontext: Morgen-Briefing für den Nutzer – brauche Termine für die erste Tagesübersicht.]\nKalendercheck für Montag, 11. Mai. Bitte nächste 3-5 Termine heute mit Uhrzeit und Ort zurück.",
+      "reply": "Ich hole dir die Termine für heute!🚨 **Kalender-Verbindungsfehler** – Token-Authentifizierung fehlgeschlagen.\n\nDas bedeutet: Die Verbindung zu deinem Google Calendar konnte nicht hergestellt werden. Das ist wahrscheinlich ein temporäres Problem mit der Anmeldung.\n\n**Workaround:**\n- Probier es in 2-3 Minuten erneut\n- Falls das Problem bleibt: Login prüfen und ggf. Authentifizierung zurücksetzen\n\nBrauuchst du die Termine dringend jetzt, oder warten wir kurz?",
+      "ts": "2026-05-11T14:06:16.889Z"
+    },
+    {
+      "agent": "vera",
+      "user": "Erstelle mein Morgen-Briefing für heute, Montag, 11. Mai. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich helfe dir gerne mit deinem Morgen-Briefing! Um die Informationen zusammenzustellen, brauche ich folgende Daten:\n\n**1. Nächste Termine:** Ich schaue in deinem Kalender nach – dafür delegiere ich zu @OTTO.\n\n**2. Wetter:** Ich hole die aktuelle Wettervorhersage für Stuttgart.\n\n**3. Gesundheit & Prioritäten:** Ich prüfe deine aktuellen Aktivitäts- und Schlafwerte.\n\nLass mich starten:Ich kann dir bereits zwei Komponenten liefern, die dritte hat temporäre Probleme. Hier dein **Morgen-Briefing für Montag, 11. Mai:**\n\n---\n\n### 📅 **(1) Nächste Termine**\n❌ **Kalender gerade nicht erreichbar** (Authentifizierungsfehler bei @OTTO)  \n→ Bitte manuell in Google Calendar prüfen oder in 2-3 Min. neu fragen\n\n---\n\n### 🌤️ **(2) Wetter heute in Stuttgart**\n- **Aktuelle Temperatur:** 15,6°C, bewölkt bis r",
+      "ts": "2026-05-11T14:06:22.944Z"
+    },
+    {
+      "agent": "otto",
+      "user": "Erstelle mein Morgen-Briefing für heute, Montag, 11. Mai. Nenne (1) die nächsten Termine, (2) eine kurze Wetterinfo und (3) deine Top-3 Prioritäten.",
+      "reply": "Ich helfe dir gerne mit deinem Morgen-Briefing! Um die Informationen zusammenzustellen, brauche ich folgende Daten:\n\n**1. Nächste Termine:** Ich schaue in deinem Kalender nach – dafür delegiere ich zu @OTTO.\n\n**2. Wetter:** Ich hole die aktuelle Wettervorhersage für Stuttgart.\n\n**3. Gesundheit & Prioritäten:** Ich prüfe deine aktuellen Aktivitäts- und Schlafwerte.\n\nLass mich starten:Ich kann dir bereits zwei Komponenten liefern, die dritte hat temporäre Probleme. Hier dein **Morgen-Briefing für Montag, 11. Mai:**\n\n---\n\n### 📅 **(1) Nächste Termine**\n❌ **Kalender gerade nicht erreichbar** (Authentifizierungsfehler bei @OTTO)  \n→ Bitte manuell in Google Calendar prüfen oder in 2-3 Min. neu fragen\n\n---\n\n### 🌤️ **(2) Wetter heute in Stuttgart**\n- **Aktuelle Temperatur:** 15,6°C, bewölkt bis r",
+      "ts": "2026-05-11T14:06:22.982Z"
     }
   ]
 }
